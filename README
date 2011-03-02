@@ -1,0 +1,3 @@
+Tracker library for AdMob, others to come soon (Flurry, etc.).
+
+Note:  This project has a dependency on HttpClient https://github.com/lolay/http-client
