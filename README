@@ -1,1 +1,4 @@
 Tracker library for AdMob, others to come soon (Flurry, etc.).
+
+- Async Admob reporting using NSURLConnection delegate methods
+- Once-per-app Admob reporting using Docs dir
