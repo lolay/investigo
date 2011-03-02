@@ -5,8 +5,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface LolayAdMobTracking : NSObject 
+@interface LolayAdMobTracking : NSObject
 
-- (NSError*) report:(NSString*)iTunesId;
+- (void) report:(NSString*)iTunesId;
 
 @end
