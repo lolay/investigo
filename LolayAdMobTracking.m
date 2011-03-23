@@ -17,6 +17,9 @@
 
 @implementation LolayAdMobTracking
 
+@synthesize receivedData = receivedData_;
+@synthesize lastResponse = lastResponse_;
+
 #pragma mark -
 #pragma mark Init
 - (id) init {
