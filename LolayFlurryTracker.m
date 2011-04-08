@@ -83,10 +83,12 @@
 
 - (void) logPage:(NSString*) name {
     [FlurryAPI logEvent:name withParameters:[self buildParameters:nil]];
+	[FlurryAPI logPageView];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
     [FlurryAPI logEvent:name withParameters:[self buildParameters:parameters]];
+	[FlurryAPI logPageView];
 }
 
 - (void) logException:(NSException*) exception {
