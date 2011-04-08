@@ -68,7 +68,7 @@
     [flurryParameters setObject:systemVersion forKey:@"systemVersion"];
     [flurryParameters setObject:model forKey:@"model"];
     [flurryParameters setObject:[NSString stringWithFormat:@"%@-%@", model, systemVersion] forKey:@"model-systemVersion"];
-    [flurryParameters setObject:[NSLocale currentLocale] forKey:@"locale"];
+    [flurryParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"locale"];
     
     return [flurryParameters autorelease];
 }
