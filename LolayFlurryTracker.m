@@ -4,6 +4,8 @@
 //
 #import "LolayFlurryTracker.h"
 #import "FlurryAPI.h"
+#include <sys/types.h>
+#include <sys/sysctl.h>
 
 @interface LolayFlurryTracker ()
 
@@ -50,6 +52,16 @@
     self.globalParametersValue = globalParameters;
 }
 
+- (NSString*) machine {
+	size_t size;
+	sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+	char* machine = malloc(size);
+	sysctlbyname("hw.machine", machine, &size, NULL, 0);
+	NSString* machineString = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
+	free(machine);
+	return machineString;
+}
+
 - (NSDictionary*) buildParameters:(NSDictionary*) parameters {
     NSMutableDictionary* flurryParameters;
     
@@ -63,12 +75,19 @@
         [flurryParameters addEntriesFromDictionary:self.globalParametersValue];
     }
     
+    NSString* machine = [self machine];
     NSString* model = [[UIDevice currentDevice] model];
     NSString* systemVersion = [[UIDevice currentDevice] systemVersion];
+    NSString* systemName = [[UIDevice currentDevice] systemName];
+	NSString* platform = [NSString stringWithFormat:@"%@ (%@): %@ %@", model, machine, systemName, systemVersion];
+    [flurryParameters setObject:systemName forKey:@"systemName"];
     [flurryParameters setObject:systemVersion forKey:@"systemVersion"];
+    [flurryParameters setObject:machine forKey:@"machine"];
     [flurryParameters setObject:model forKey:@"model"];
-    [flurryParameters setObject:[NSString stringWithFormat:@"%@-%@", model, systemVersion] forKey:@"model-systemVersion"];
+    [flurryParameters setObject:platform forKey:@"platform"];
     [flurryParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"locale"];
+	
+	DLog(@"flurryParameters=%@", flurryParameters);
     
     return [flurryParameters autorelease];
 }
