@@ -54,9 +54,10 @@
 
 - (NSString*) machine {
 	size_t size;
-	sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+	int mib[2] = {CTL_HW, HW_MACHINE};
+	sysctl(mib, 2, NULL, &size, NULL, 0);
 	char* machine = malloc(size);
-	sysctlbyname("hw.machine", machine, &size, NULL, 0);
+	sysctl(mib, 2, machine, &size, NULL, 0);
 	NSString* machineString = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
 	free(machine);
 	return machineString;
