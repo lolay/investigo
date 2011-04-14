@@ -81,10 +81,6 @@
     NSString* systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString* systemName = [[UIDevice currentDevice] systemName];
 	NSString* platform = [NSString stringWithFormat:@"%@ (%@): %@ %@", model, machine, systemName, systemVersion];
-    [flurryParameters setObject:systemName forKey:@"systemName"];
-    [flurryParameters setObject:systemVersion forKey:@"systemVersion"];
-    [flurryParameters setObject:machine forKey:@"machine"];
-    [flurryParameters setObject:model forKey:@"model"];
     [flurryParameters setObject:platform forKey:@"platform"];
     [flurryParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"locale"];
 	
