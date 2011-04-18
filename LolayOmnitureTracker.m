@@ -8,29 +8,47 @@
 @interface LolayOmnitureTracker ()
 
 @property (nonatomic, retain, readwrite) NSDictionary* globalParametersValue;
+@property (nonatomic, retain, readwrite) NSString* account;
+@property (nonatomic, retain, readwrite) NSString* trackingServer;
+@property (nonatomic, retain, readwrite) NSString* currencyCode;
 
 @end
 
 @implementation LolayOmnitureTracker
 
 @synthesize globalParametersValue = globalParametersValue_;
+@synthesize account = account_;
+@synthesize trackingServer = trackingServer_;
+@synthesize currencyCode = currencyCode_;
 
 - (id) initWithTrackingServer:(NSString*) trackingServer account:(NSString*) account currencyCode:(NSString*) currencyCode {
     self = [super init];
     
     if (self) {
-        OMAppMeasurement* omniture = [[OMAppMeasurement getInstance] retain];
-        
-        omniture.trackingServer = trackingServer;
-        omniture.account = account;
-        omniture.currencyCode = currencyCode;
-#ifndef __OPTIMIZE__
-        omniture.debugTracking = YES;
-#endif        
-        [omniture release];
+		self.trackingServer = trackingServer;
+		self.account = account;
+		self.currencyCode = currencyCode;
     }
     
     return self;
+}
+
+- (void) setTracking {
+	OMAppMeasurement* omniture = [[OMAppMeasurement getInstance] retain];
+	
+	if (! [omniture.trackingServer isEqualToString:self.trackingServer] ||
+		! [omniture.account isEqualToString:self.account] ||
+		! [omniture.currencyCode isEqualToString:self.currencyCode]) {
+		
+		omniture.trackingServer = self.trackingServer;
+		omniture.account = self.account;
+		omniture.currencyCode = self.currencyCode;
+#ifndef __OPTIMIZE__
+		omniture.debugTracking = YES;
+#endif
+	}
+	
+	[omniture release];
 }
 
 - (void) setState:(NSString*) state {
@@ -64,18 +82,22 @@
 }
 
 - (void) logEvent:(NSString*) name {
+	[self setTracking];
     [[OMAppMeasurement getInstance] track:[self buildParameters:nil withPageName:name]];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
+	[self setTracking];
     [[OMAppMeasurement getInstance] track:[self buildParameters:parameters withPageName:name]];
 }
 
 - (void) logPage:(NSString*) name {
+	[self setTracking];
     [[OMAppMeasurement getInstance] track:[self buildParameters:nil withPageName:name]];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
+	[self setTracking];
     [[OMAppMeasurement getInstance] track:[self buildParameters:parameters withPageName:name]];
 }
 

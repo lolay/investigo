@@ -29,9 +29,10 @@
             
             for (tracker = firstTracker; tracker != nil; tracker = va_arg(args, id<LolayTracker>)) {
                 localeIdentifier = va_arg(args, NSString*);
+				NSLog(@"localeIdentifier=%@", localeIdentifier);
                 if (localeIdentifier != nil) {
                     [localeTrackers setObject:tracker forKey:localeIdentifier];
-                }
+				}
             }
             
             va_end(args);
