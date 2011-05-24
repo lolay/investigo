@@ -57,6 +57,10 @@
     [[self trackerForCurrentLocale] setIdentifier:identifier];
 }
 
+- (void) setVersion:(NSString*) version {
+	[[self trackerForCurrentLocale] setVersion:version];
+}
+
 - (void) setAge:(NSUInteger) age {
     [[self trackerForCurrentLocale] setAge:age];
 }

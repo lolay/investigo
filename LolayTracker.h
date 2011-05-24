@@ -13,6 +13,7 @@ typedef enum {
 @protocol LolayTracker <NSObject>
 
 - (void) setIdentifier:(NSString*) identifier;
+- (void) setVersion:(NSString*) version;
 - (void) setAge:(NSUInteger) age;
 - (void) setGender:(LolayTrackerGender) gender;
 - (void) setState:(NSString*) state;

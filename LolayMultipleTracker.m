@@ -46,6 +46,12 @@
     }
 }
 
+- (void) setVersion:(NSString*) version {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setVersion:version];
+    }    
+}
+
 - (void) setAge:(NSUInteger) age {
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setAge:age];

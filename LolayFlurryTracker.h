@@ -8,5 +8,6 @@
 @interface LolayFlurryTracker : LolayBaseTracker
 
 - (id) initWithKey:(NSString*) key;
+- (id) initWithKey:(NSString*) key version:(NSString*) version;
 
 @end

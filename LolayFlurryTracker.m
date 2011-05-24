@@ -30,8 +30,25 @@
     return self;
 }
 
+- (id) initWithKey:(NSString*) key version:(NSString*) version {
+    self = [super init];
+    if (self) {
+#ifndef __OPTIMIZE__
+        [FlurryAPI setShowErrorInLogEnabled:YES];
+#endif        
+        [FlurryAPI setAppVersion:version];
+        [FlurryAPI startSession:key];
+    }
+    
+    return self;
+}
+
 - (void) setIdentifier:(NSString*) identifier {
     [FlurryAPI setUserID:identifier];
+}
+
+- (void) setVersion:(NSString*) version {
+	[FlurryAPI setAppVersion:version];
 }
 
 - (void) setAge:(NSUInteger) age {

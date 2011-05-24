@@ -10,6 +10,10 @@
     
 }
 
+- (void) setVersion:(NSString*) version {
+	
+}
+
 - (void) setAge:(NSUInteger) age {
     
 }
