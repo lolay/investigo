@@ -3,7 +3,7 @@
 //  Copyright 2011 Lolay, Inc. All rights reserved.
 //
 #import "LolayFlurryTracker.h"
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
@@ -21,10 +21,10 @@
     self = [super init];
     if (self) {
 #ifndef __OPTIMIZE__
-        [FlurryAPI setShowErrorInLogEnabled:YES];
+        [FlurryAnalytics setShowErrorInLogEnabled:YES];
 #endif        
-        [FlurryAPI setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-        [FlurryAPI startSession:key];
+        [FlurryAnalytics setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        [FlurryAnalytics startSession:key];
     }
     
     return self;
@@ -34,34 +34,34 @@
     self = [super init];
     if (self) {
 #ifndef __OPTIMIZE__
-        [FlurryAPI setShowErrorInLogEnabled:YES];
+        [FlurryAnalytics setShowErrorInLogEnabled:YES];
 #endif        
-        [FlurryAPI setAppVersion:version];
-        [FlurryAPI startSession:key];
+        [FlurryAnalytics setAppVersion:version];
+        [FlurryAnalytics startSession:key];
     }
     
     return self;
 }
 
 - (void) setIdentifier:(NSString*) identifier {
-    [FlurryAPI setUserID:identifier];
+    [FlurryAnalytics setUserID:identifier];
 }
 
 - (void) setVersion:(NSString*) version {
-	[FlurryAPI setAppVersion:version];
+	[FlurryAnalytics setAppVersion:version];
 }
 
 - (void) setAge:(NSUInteger) age {
-    [FlurryAPI setAge:age];
+    [FlurryAnalytics setAge:age];
 }
 
 - (void) setGender:(LolayTrackerGender) gender {
     if (gender == LolayTrackerGenderMale) {
-        [FlurryAPI setGender:@"m"];
+        [FlurryAnalytics setGender:@"m"];
     } else if (gender == LolayTrackerGenderFemale) {
-        [FlurryAPI setGender:@"f"];
+        [FlurryAnalytics setGender:@"f"];
     } else {
-        [FlurryAPI setGender:nil];
+        [FlurryAnalytics setGender:nil];
     }
 }
 
@@ -106,30 +106,30 @@
     return [flurryParameters autorelease];
 }
 
-- (void) logEvent:(NSString*) name {
-    [FlurryAPI logEvent:name withParameters:[self buildParameters:nil]];
+- (void) FlurryAnalytics:(NSString*) name {
+    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:nil]];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    [FlurryAPI logEvent:name withParameters:[self buildParameters:parameters]];
+    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:parameters]];
 }
 
 - (void) logPage:(NSString*) name {
-    [FlurryAPI logEvent:name withParameters:[self buildParameters:nil]];
-	[FlurryAPI logPageView];
+    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:nil]];
+	[FlurryAnalytics logPageView];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    [FlurryAPI logEvent:name withParameters:[self buildParameters:parameters]];
-	[FlurryAPI logPageView];
+    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:parameters]];
+	[FlurryAnalytics logPageView];
 }
 
 - (void) logException:(NSException*) exception {
-    [FlurryAPI logError:exception.name message:exception.reason exception:exception];
+    [FlurryAnalytics logError:exception.name message:exception.reason exception:exception];
 }
 
 - (void) logError:(NSError*) error {
-    [FlurryAPI logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
+    [FlurryAnalytics logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
 }
 
 - (void) dealloc {
