@@ -106,7 +106,7 @@
     return [flurryParameters autorelease];
 }
 
-- (void) FlurryAnalytics:(NSString*) name {
+- (void) logEvent:(NSString*) name {
     [FlurryAnalytics logEvent:name withParameters:[self buildParameters:nil]];
 }
 
