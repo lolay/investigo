@@ -103,7 +103,7 @@
 	
 	DLog(@"flurryParameters=%@", flurryParameters);
     
-    return [flurryParameters autorelease];
+    return flurryParameters;
 }
 
 - (void) logEvent:(NSString*) name {
@@ -130,12 +130,6 @@
 
 - (void) logError:(NSError*) error {
     [FlurryAnalytics logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
-}
-
-- (void) dealloc {
-    self.globalParametersValue = nil;
-    
-    [super dealloc];
 }
 
 @end

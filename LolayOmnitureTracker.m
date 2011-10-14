@@ -34,7 +34,7 @@
 }
 
 - (void) setTracking {
-	OMAppMeasurement* omniture = [[OMAppMeasurement getInstance] retain];
+	OMAppMeasurement* omniture = [OMAppMeasurement getInstance];
 	
 	if (! [omniture.trackingServer isEqualToString:self.trackingServer] ||
 		! [omniture.account isEqualToString:self.account] ||
@@ -47,8 +47,6 @@
 		omniture.debugTracking = YES;
 #endif
 	}
-	
-	[omniture release];
 }
 
 - (void) setState:(NSString*) state {
@@ -78,7 +76,7 @@
     
     [omnitureParameters setObject:pageName forKey:@"pageName"];
     
-    return [omnitureParameters autorelease];
+    return omnitureParameters;
 }
 
 - (void) logEvent:(NSString*) name {

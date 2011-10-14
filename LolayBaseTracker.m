@@ -62,7 +62,6 @@
     va_end(args);
     
     [self logEvent:name withDictionary:parameters];
-    [parameters release];
 }
 
 - (void) logPage:(NSString*) name {
@@ -87,7 +86,6 @@
     }
     
     [self logPage:name withDictionary:parameters];
-    [parameters release];
 }
 
 - (void) logException:(NSException*) exception {

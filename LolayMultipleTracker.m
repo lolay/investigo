@@ -33,8 +33,6 @@
         }
         
         self.trackers = tmpTrackers;
-        
-        [tmpTrackers release];
     }
     
     return self;
@@ -104,12 +102,6 @@
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logError:error];
     }
-}
-
-- (void) dealloc {
-    self.trackers = nil;
-    
-    [super dealloc];
 }
 
 @end

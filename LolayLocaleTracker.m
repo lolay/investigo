@@ -39,7 +39,6 @@
         }
         
         self.trackers = localeTrackers;
-        [localeTrackers release];
     }
     
     return self;
@@ -97,12 +96,6 @@
 
 - (void) logError:(NSError*) error {
     [[self trackerForCurrentLocale] logError:error];
-}
-
-- (void) dealloc {
-    self.trackers = nil;
-    
-    [super dealloc];
 }
 
 @end
