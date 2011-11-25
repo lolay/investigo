@@ -6,7 +6,7 @@
 
 @interface LolayMultipleTracker ()
 
-@property (nonatomic, retain, readwrite) NSArray* trackers;
+@property (nonatomic, strong, readwrite) NSArray* trackers;
 
 @end
 

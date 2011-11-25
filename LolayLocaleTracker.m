@@ -6,7 +6,7 @@
 
 @interface LolayLocaleTracker ()
 
-@property (nonatomic, retain, readwrite) NSDictionary* trackers;
+@property (nonatomic, strong, readwrite) NSDictionary* trackers;
 
 @end
 

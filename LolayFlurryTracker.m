@@ -9,7 +9,7 @@
 
 @interface LolayFlurryTracker ()
 
-@property (nonatomic, retain, readwrite) NSDictionary* globalParametersValue;
+@property (nonatomic, strong, readwrite) NSDictionary* globalParametersValue;
 
 @end
 
