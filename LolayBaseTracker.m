@@ -34,8 +34,16 @@
     
 }
 
+- (void) setChannel:(NSString*) channel {
+	
+}
+
 - (void) setGlobalParameters:(NSDictionary*) globalParameters {
     
+}
+
+- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+	
 }
 
 - (void) logEvent:(NSString*) name {
@@ -94,6 +102,17 @@
 
 - (void) logError:(NSError*) error {
     
+}
+
+- (NSString*) trackerId {
+	return nil;
+}
+
+- (NSString*) trackerIdForType:(Class) clazz {
+	if ([self isKindOfClass:clazz]) {
+		return [self trackerId];
+	}
+	return nil;
 }
 
 @end

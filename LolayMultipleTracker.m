@@ -104,4 +104,14 @@
     }
 }
 
+- (NSString*) trackerIdForType:(Class) clazz {
+    for (id<LolayTracker> tracker in self.trackers) {
+		NSString* trackerId = [tracker trackerIdForType:clazz];
+		if (trackerId) {
+			return trackerId;
+		}
+    }
+	return nil;
+}
+
 @end

@@ -4,9 +4,14 @@
 //
 #import <Foundation/Foundation.h>
 #import "LolayBaseTracker.h"
+#import "LolayOmnitureTrackerDelegate.h"
+
+@class AppMeasurement;
 
 @interface LolayOmnitureTracker : LolayBaseTracker
 
-- (id) initWithTrackingServer:(NSString*) trackingServer account:(NSString*) account currencyCode:(NSString*) currencyCode;
+@property (nonatomic, strong, readonly) AppMeasurement* appMeasurement;
+
+- (id) initWithTrackingServer:(NSString*) trackingServer account:(NSString*) account currencyCode:(NSString*) currencyCode delegate:(id<LolayOmnitureTrackerDelegate>) delegate;
 
 @end

@@ -69,6 +69,13 @@
     self.globalParametersValue = globalParameters;
 }
 
+- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+	if (self.globalParametersValue == nil) {
+		self.globalParametersValue = [NSMutableDictionary dictionary];
+	}
+	[self.globalParametersValue setValue:value forKey:key];
+}
+
 - (NSString*) machine {
 	size_t size;
 	int mib[2] = {CTL_HW, HW_MACHINE};
