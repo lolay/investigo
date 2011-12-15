@@ -68,6 +68,12 @@
     }
 }
 
+- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setGlobalParameterValue:value forKey:key];
+    }
+}
+
 - (void) logEvent:(NSString*) name {
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logEvent:name];
