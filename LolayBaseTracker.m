@@ -42,7 +42,11 @@
     
 }
 
-- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+- (void) setGlobalParameter:(NSString*) object forKey:(NSString*) key {
+	
+}
+
+- (void) removeGlobalParameterForKey:(NSString*) key {
 	
 }
 

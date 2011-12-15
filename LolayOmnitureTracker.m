@@ -7,7 +7,7 @@
 
 @interface LolayOmnitureTracker ()
 
-@property (nonatomic, strong, readwrite) NSDictionary* globalParametersValue;
+@property (nonatomic, strong, readwrite) NSMutableDictionary* globalParametersValue;
 @property (nonatomic, strong, readwrite) NSString* account;
 @property (nonatomic, strong, readwrite) NSString* trackingServer;
 @property (nonatomic, strong, readwrite) NSString* currencyCode;
@@ -111,19 +111,29 @@
 }
 
 - (void) setGlobalParameters:(NSDictionary*) globalParameters {
-    self.globalParametersValue = globalParameters;
+    self.globalParametersValue = [NSMutableDictionary dictionaryWithDictionary:globalParameters];
 	if (self.delegate) {
-		[self.delegate omnitureTracker:self globalParametersWasSet:globalParameters];
+		[self.delegate omnitureTracker:self globalParametersWasSet:self.globalParametersValue];
 	}
 }
 
-- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+- (void) setGlobalParameter:(NSString*) object forKey:(NSString*) key {
 	if (self.globalParametersValue == nil) {
 		self.globalParametersValue = [NSMutableDictionary dictionary];
 	}
-	[self.globalParametersValue setValue:value forKey:key];
+	[self.globalParametersValue setObject:object forKey:key];
 	if (self.delegate) {
 		[self.delegate omnitureTracker:self globalParametersWasSet:self.globalParametersValue];
+	}
+}
+
+- (void) removeGlobalParameterForKey:(NSString*) key {
+	if (self.globalParametersValue) {
+		[self.globalParametersValue removeObjectForKey:key];
+		
+		if (self.delegate) {
+			[self.delegate omnitureTracker:self globalParametersWasSet:self.globalParametersValue];
+		}
 	}
 }
 

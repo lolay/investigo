@@ -9,7 +9,7 @@
 
 @interface LolayFlurryTracker ()
 
-@property (nonatomic, strong, readwrite) NSDictionary* globalParametersValue;
+@property (nonatomic, strong, readwrite) NSMutableDictionary* globalParametersValue;
 
 @end
 
@@ -66,14 +66,14 @@
 }
 
 - (void) setGlobalParameters:(NSDictionary*) globalParameters {
-    self.globalParametersValue = globalParameters;
+    self.globalParametersValue = [NSMutableDictionary dictionaryWithDictionary:globalParameters];
 }
 
-- (void) setGlobalParameterValue:(NSString*) value forKey:(NSString*) key {
+- (void) setGlobalParameter:(NSString*) object forKey:(NSString*) key {
 	if (self.globalParametersValue == nil) {
 		self.globalParametersValue = [NSMutableDictionary dictionary];
 	}
-	[self.globalParametersValue setValue:value forKey:key];
+	[self.globalParametersValue setObject:object forKey:key];
 }
 
 - (NSString*) machine {
