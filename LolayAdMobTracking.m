@@ -2,6 +2,7 @@
 //  Created by Lolay, Inc.
 //  Copyright 2011 Lolay, Inc. All rights reserved.
 //
+#import "LolayInvestigoGlobals.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "LolayAdMobTracking.h"
 
@@ -40,7 +41,7 @@
 #pragma mark Report Method
 - (void) report:(NSString*) iTunesId {
 	if(! [[NSUserDefaults standardUserDefaults] boolForKey:ADMOB_NAME]) {
-		NSLog(@"Reporting to admob");
+		DLog(@"Reporting to admob");
 		NSString* appOpenEndpoint = [NSString stringWithFormat:ADMOB_URL, [self hashedISU], iTunesId];
 		NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:appOpenEndpoint]];
 		NSURLResponse* response = nil;
@@ -52,7 +53,7 @@
 			[[NSUserDefaults standardUserDefaults] synchronize];
 		}
 	} else {
-		NSLog(@"Already reported to admob, skipping");
+		DLog(@"Already reported to admob, skipping");
 	}
 }
 
