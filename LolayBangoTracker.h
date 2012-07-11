@@ -20,4 +20,7 @@
 
 - (id) initWithApplicationId:(NSString*) applicationId applicationType:(NSString*) applicationType channel:(NSString*) channel;
 
+- (void) onResume;
+- (void) onTerminate;
+
 @end

@@ -133,4 +133,12 @@
     [[BGOAnalyticsManager sharedManager] onErrorWithEventParameters:[self buildParameters:nil] message:error.localizedDescription eventClass:@"Error" eventErrorLevel:[NSNumber numberWithInt:BGO_ERROR_INTERNAL_CRITICAL] eventErrorId:[NSString stringWithFormat:@"%@:%i", error.domain, error.code]];
 }
 
+- (void) onResume {
+    [[BGOAnalyticsManager sharedManager] onResumeWithEventParameters:[self buildParameters:nil] eventDetail:@"onResume" eventValue:nil];
+}
+
+- (void) onTerminate {
+    [[BGOAnalyticsManager sharedManager] onEndSessionWithEventParameters:[self buildParameters:nil] eventDetail:@"onTerminate" eventValue:nil];
+}
+
 @end
