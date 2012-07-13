@@ -35,7 +35,7 @@
     if ((self = [super init])) {
         BGOAnalyticsManager *analytics = [BGOAnalyticsManager sharedManager];
         // config options here
-        analytics.findLocation = YES;
+        analytics.findLocation = NO;
         analytics.debugLog = YES;
         analytics.applicationChannel = channel;
         analytics.applicationType = applicationType;
