@@ -99,8 +99,8 @@
     NSString* systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString* systemName = [[UIDevice currentDevice] systemName];
 	NSString* platform = [NSString stringWithFormat:@"%@ (%@): %@ %@", model, machine, systemName, systemVersion];
-    [bangoParameters setObject:platform forKey:@"platform"];
-    [bangoParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"locale"];
+    [bangoParameters setObject:platform forKey:@"bgo_custom8"];
+    [bangoParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"bgo_custom9"];
 	
 	DLog(@"bangoParameters=%@", bangoParameters);
     
