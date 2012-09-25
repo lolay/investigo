@@ -15,7 +15,7 @@
 //
 
 #import "LolayFlurryTracker.h"
-#import "FlurryAnalytics.h"
+#import "Flurry.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
@@ -33,10 +33,10 @@
     self = [super init];
     if (self) {
 #ifndef __OPTIMIZE__
-        [FlurryAnalytics setShowErrorInLogEnabled:YES];
+        [Flurry setShowErrorInLogEnabled:YES];
 #endif        
-        [FlurryAnalytics setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-        [FlurryAnalytics startSession:key];
+        [Flurry setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        [Flurry startSession:key];
     }
     
     return self;
@@ -46,34 +46,34 @@
     self = [super init];
     if (self) {
 #ifndef __OPTIMIZE__
-        [FlurryAnalytics setShowErrorInLogEnabled:YES];
+        [Flurry setShowErrorInLogEnabled:YES];
 #endif        
-        [FlurryAnalytics setAppVersion:version];
-        [FlurryAnalytics startSession:key];
+        [Flurry setAppVersion:version];
+        [Flurry startSession:key];
     }
     
     return self;
 }
 
 - (void) setIdentifier:(NSString*) identifier {
-    [FlurryAnalytics setUserID:identifier];
+    [Flurry setUserID:identifier];
 }
 
 - (void) setVersion:(NSString*) version {
-	[FlurryAnalytics setAppVersion:version];
+	[Flurry setAppVersion:version];
 }
 
 - (void) setAge:(NSUInteger) age {
-    [FlurryAnalytics setAge:age];
+    [Flurry setAge:age];
 }
 
 - (void) setGender:(LolayTrackerGender) gender {
     if (gender == LolayTrackerGenderMale) {
-        [FlurryAnalytics setGender:@"m"];
+        [Flurry setGender:@"m"];
     } else if (gender == LolayTrackerGenderFemale) {
-        [FlurryAnalytics setGender:@"f"];
+        [Flurry setGender:@"f"];
     } else {
-        [FlurryAnalytics setGender:nil];
+        [Flurry setGender:nil];
     }
 }
 
@@ -100,16 +100,16 @@
 }
 
 - (NSDictionary*) buildParameters:(NSDictionary*) parameters {
-    NSMutableDictionary* FlurryAnalyticsParameters;
+    NSMutableDictionary* flurryParameters;
     
     if (parameters == nil) {
-        FlurryAnalyticsParameters = [[NSMutableDictionary alloc] initWithCapacity:4 + self.globalParametersValue.count];
+        flurryParameters = [[NSMutableDictionary alloc] initWithCapacity:4 + self.globalParametersValue.count];
     } else {
-        FlurryAnalyticsParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+        flurryParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
     }
     
     if (self.globalParametersValue) {
-        [FlurryAnalyticsParameters addEntriesFromDictionary:self.globalParametersValue];
+        [flurryParameters addEntriesFromDictionary:self.globalParametersValue];
     }
     
     NSString* machine = [self machine];
@@ -117,38 +117,41 @@
     NSString* systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString* systemName = [[UIDevice currentDevice] systemName];
 	NSString* platform = [NSString stringWithFormat:@"%@ (%@): %@ %@", model, machine, systemName, systemVersion];
-    [FlurryAnalyticsParameters setObject:platform forKey:@"platform"];
-    [FlurryAnalyticsParameters setObject:[[NSLocale currentLocale] localeIdentifier] forKey:@"locale"];
+	NSString* locale = [[NSLocale currentLocale] localeIdentifier];
+	NSString* language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    [flurryParameters setObject:platform forKey:@"platform"];
+    [flurryParameters setObject:locale forKey:@"locale"];
+    [flurryParameters setObject:language forKey:@"language"];
 	
-	DLog(@"FlurryAnalyticsParameters=%@", FlurryAnalyticsParameters);
+	DLog(@"flurryParameters=%@", flurryParameters);
     
-    return FlurryAnalyticsParameters;
+    return flurryParameters;
 }
 
 - (void) logEvent:(NSString*) name {
-    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:nil]];
+    [Flurry logEvent:name withParameters:[self buildParameters:nil]];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:parameters]];
+    [Flurry logEvent:name withParameters:[self buildParameters:parameters]];
 }
 
 - (void) logPage:(NSString*) name {
-    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:nil]];
-	[FlurryAnalytics logPageView];
+    [Flurry logEvent:name withParameters:[self buildParameters:nil]];
+	[Flurry logPageView];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    [FlurryAnalytics logEvent:name withParameters:[self buildParameters:parameters]];
-	[FlurryAnalytics logPageView];
+    [Flurry logEvent:name withParameters:[self buildParameters:parameters]];
+	[Flurry logPageView];
 }
 
 - (void) logException:(NSException*) exception {
-    [FlurryAnalytics logError:exception.name message:exception.reason exception:exception];
+    [Flurry logError:exception.name message:exception.reason exception:exception];
 }
 
 - (void) logError:(NSError*) error {
-    [FlurryAnalytics logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
+    [Flurry logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
 }
 
 @end
