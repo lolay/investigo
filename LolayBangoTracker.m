@@ -108,21 +108,21 @@
 }
 
 - (void) logEvent:(NSString*) name {
-    [[BGOAnalyticsManager sharedManager] onEvent:name eventDetail:nil eventValue:nil eventParameters:[self buildParameters:nil]];
+    [[BGOAnalyticsManager sharedManager] onEvent:name eventDetail:@"" eventValue:@"" eventParameters:[self buildParameters:nil]];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    [[BGOAnalyticsManager sharedManager] onEvent:name eventDetail:nil eventValue:nil eventParameters:[self buildParameters:parameters]];
+    [[BGOAnalyticsManager sharedManager] onEvent:name eventDetail:@"" eventValue:@"" eventParameters:[self buildParameters:parameters]];
 }
 
 - (void) logPage:(NSString*) name {
     [self logEvent:name];
-    [[BGOAnalyticsManager sharedManager] onPageViewWithEventParameters:[self buildParameters:nil] eventDetail:name eventValue:nil];
+    [[BGOAnalyticsManager sharedManager] onPageViewWithEventParameters:[self buildParameters:nil] eventDetail:name eventValue:@""];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
     [self logEvent:name withDictionary:parameters];
-    [[BGOAnalyticsManager sharedManager] onPageViewWithEventParameters:[self buildParameters:parameters] eventDetail:name eventValue:nil];
+    [[BGOAnalyticsManager sharedManager] onPageViewWithEventParameters:[self buildParameters:parameters] eventDetail:name eventValue:@""];
 }
 
 - (void) logException:(NSException*) exception {
@@ -134,11 +134,11 @@
 }
 
 - (void) onResume {
-    [[BGOAnalyticsManager sharedManager] onResumeWithEventParameters:[self buildParameters:nil] eventDetail:@"onResume" eventValue:nil];
+    [[BGOAnalyticsManager sharedManager] onResumeWithEventParameters:[self buildParameters:nil] eventDetail:@"onResume" eventValue:@""];
 }
 
 - (void) onTerminate {
-    [[BGOAnalyticsManager sharedManager] onEndSessionWithEventParameters:[self buildParameters:nil] eventDetail:@"onTerminate" eventValue:nil];
+    [[BGOAnalyticsManager sharedManager] onEndSessionWithEventParameters:[self buildParameters:nil] eventDetail:@"onTerminate" eventValue:@""];
 }
 
 @end
