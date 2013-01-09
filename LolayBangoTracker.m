@@ -45,6 +45,8 @@
         analytics.logEnabled = YES;
         // set transmission to automatic
         analytics.automaticDataTransmission = YES;
+        // turn off debug logging
+        analytics.debugLog = NO;
         // start the session
         [analytics onStartSessionWithApplicationId:applicationId];
     }
