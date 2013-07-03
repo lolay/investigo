@@ -15,10 +15,9 @@
 //
 
 #import "LolayBangoTracker.h"
-#import <Bango/BGOAnalyticsConstants.h>
-#import <Bango/BGOAnalyticsManager.h>
-#import <Bango/BangoConfigConstants.h>
-#import <Bango/BGOTransmissionModeConstants.h>
+#import "BGOAnalyticsConstants.h"
+#import "BGOAnalyticsManager.h"
+#import "BGOTransmissionModeConstants.h"
 #include <sys/sysctl.h>
 
 @interface LolayBangoTracker ()
