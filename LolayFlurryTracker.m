@@ -37,6 +37,7 @@
 #endif        
         [Flurry setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
         [Flurry startSession:key];
+		[Flurry setCrashReportingEnabled:YES];
     }
     
     return self;
@@ -50,6 +51,21 @@
 #endif        
         [Flurry setAppVersion:version];
         [Flurry startSession:key];
+		[Flurry setCrashReportingEnabled:YES];
+    }
+    
+    return self;
+}
+
+- (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled {
+    self = [super init];
+    if (self) {
+#ifndef __OPTIMIZE__
+        [Flurry setShowErrorInLogEnabled:YES];
+#endif
+        [Flurry setAppVersion:version];
+        [Flurry startSession:key];
+		[Flurry setCrashReportingEnabled:crashReportingEnabled];
     }
     
     return self;
