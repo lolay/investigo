@@ -36,8 +36,8 @@
         [Flurry setShowErrorInLogEnabled:YES];
 #endif        
         [Flurry setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-        [Flurry startSession:key];
 		[Flurry setCrashReportingEnabled:YES];
+        [Flurry startSession:key];
     }
     
     return self;
@@ -50,8 +50,8 @@
         [Flurry setShowErrorInLogEnabled:YES];
 #endif        
         [Flurry setAppVersion:version];
-        [Flurry startSession:key];
 		[Flurry setCrashReportingEnabled:YES];
+        [Flurry startSession:key];
     }
     
     return self;
@@ -64,8 +64,8 @@
         [Flurry setShowErrorInLogEnabled:YES];
 #endif
         [Flurry setAppVersion:version];
-        [Flurry startSession:key];
 		[Flurry setCrashReportingEnabled:crashReportingEnabled];
+        [Flurry startSession:key];
     }
     
     return self;
