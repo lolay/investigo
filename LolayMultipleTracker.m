@@ -26,9 +26,23 @@
 
 @synthesize trackers = trackers_;
 
+- (id) initWithTrackerArray:(NSArray*) trackers {
+    self = [super init];
+    
+    self.trackingEnabled = true;
+    
+    if (self) {
+        self.trackers = trackers;
+    }
+    
+    return self;
+}
+
 - (id) initWithTrackers:(id<LolayTracker>) firstTracker, ... {
     self = [super init];
     
+    self.trackingEnabled = true;
+
     if (self) {
         NSMutableArray* tmpTrackers = [[NSMutableArray alloc] init];
         
@@ -51,78 +65,91 @@
 }
 
 - (void) setIdentifier:(NSString*) identifier {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setIdentifier:identifier];
     }
 }
 
 - (void) setVersion:(NSString*) version {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setVersion:version];
     }    
 }
 
 - (void) setAge:(NSUInteger) age {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setAge:age];
     }    
 }
 
 - (void) setGender:(LolayTrackerGender) gender {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGender:gender];
     }
 }
 
 - (void) setGlobalParameters:(NSDictionary*) globalParameters {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGlobalParameters:globalParameters];
     }
 }
 
 - (void) setGlobalParameter:(NSString*) object forKey:(NSString*) key {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGlobalParameter:object forKey:key];
     }
 }
 
 - (void) removeGlobalParameterForKey:(NSString*) key {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker removeGlobalParameterForKey:key];
     }
 }
 
 - (void) logEvent:(NSString*) name {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logEvent:name];
     }
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logEvent:name withDictionary:parameters];
     }
 }
 
 - (void) logPage:(NSString*) name {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logPage:name];
     }
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logPage:name withDictionary:parameters];
     }
 }
 
 - (void) logException:(NSException*) exception {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logException:exception];
     }
 }
 
 - (void) logError:(NSError*) error {
+    if (!self.trackingEnabled) return;
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logError:error];
     }

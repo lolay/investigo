@@ -17,11 +17,10 @@
 #import <Foundation/Foundation.h>
 #import "LolayBaseTracker.h"
 
-@interface LolayMultipleTracker : LolayBaseTracker
+@interface TestFlightTracker : LolayBaseTracker
 
-@property BOOL trackingEnabled;
-
-- (id) initWithTrackerArray:(NSArray*) trackers;
-- (id) initWithTrackers:(id<LolayTracker>) firstTracker, ... NS_REQUIRES_NIL_TERMINATION;
+- (id) initWithKey:(NSString*) key;
+- (id) initWithKey:(NSString*) key version:(NSString*) version;
+//- (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled;
 
 @end
