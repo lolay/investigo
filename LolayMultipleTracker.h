@@ -19,9 +19,6 @@
 
 @interface LolayMultipleTracker : LolayBaseTracker
 
-@property BOOL trackingEnabled;
-
-- (id) initWithTrackerArray:(NSArray*) trackers;
 - (id) initWithTrackers:(id<LolayTracker>) firstTracker, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
