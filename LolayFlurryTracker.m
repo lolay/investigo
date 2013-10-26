@@ -80,7 +80,7 @@
 }
 
 - (void) setAge:(NSUInteger) age {
-    [Flurry setAge:age];
+    [Flurry setAge:(int) age];
 }
 
 - (void) setGender:(LolayTrackerGender) gender {
@@ -167,7 +167,7 @@
 }
 
 - (void) logError:(NSError*) error {
-    [Flurry logError:[NSString stringWithFormat:@"%@:%i", error.domain, error.code] message:error.localizedDescription error:error];
+    [Flurry logError:[NSString stringWithFormat:@"%@:%li", error.domain, (long) error.code] message:error.localizedDescription error:error];
 }
 
 @end
