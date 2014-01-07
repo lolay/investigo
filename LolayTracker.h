@@ -38,6 +38,8 @@
 - (void) logPage:(NSString*) name withObjectsAndKeys:(id) firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 - (void) logException:(NSException*) exception;
 - (void) logError:(NSError*) error;
+- (void) logRegistration:(NSDictionary*) userData;
+- (void) logPurchase:(NSDictionary*) purchaseData;
 - (NSString*) trackerId;
 - (NSString*) trackerIdForType:(Class) clazz;
 

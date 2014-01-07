@@ -1,29 +1,31 @@
 //
-//  Copyright 2012 Lolay, Inc.
+//  LolayFiksuTracker.m
+//  11Main
 //
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
+//  Created by Patrick Ortiz on 1/7/14.
+//  Copyright (c) 2014 Vendio Services, Inc. All rights reserved.
 //
 
-#import "LolayBaseTracker.h"
+#import "LolayFiksuTracker.h"
+#import <FiksuSDK/FiksuSDK.h>
+#include <sys/types.h>
+#include <sys/sysctl.h>
 
-@implementation LolayBaseTracker
+@implementation LolayFiksuTracker
+
+- (id) initWithLaunchOptions:(NSDictionary*) launchOptions{
+	if (self = [super init]){
+		[FiksuTrackingManager applicationDidFinishLaunching:launchOptions];
+	}
+	return self;
+}
 
 - (void) setIdentifier:(NSString*) identifier {
-    
+    [FiksuTrackingManager setClientID:identifier];
 }
 
 - (void) setVersion:(NSString*) version {
-	
+	[FiksuTrackingManager setVersion:[version intValue]];
 }
 
 - (void) setAge:(NSUInteger) age {
@@ -63,19 +65,21 @@
 }
 
 - (void) logPurchase:(NSDictionary *)purchaseData{
-	
+	[FiksuTrackingManager uploadPurchaseEvent:[purchaseData objectForKey:@"productId"]
+										price:[[purchaseData objectForKey:@"price"] doubleValue]
+										currency:[purchaseData objectForKey:@"currency"]];
 }
 
 - (void) logRegistration:(NSDictionary *)userData{
-	
+	[FiksuTrackingManager uploadRegistrationEvent:[userData objectForKey:@"userName"]];
 }
 
 - (void) logEvent:(NSString*) name {
-    
+    [FiksuTrackingManager uploadEvent:name withInfo:@{}];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
-    
+		[FiksuTrackingManager uploadEvent:name withInfo:parameters];
 }
 
 - (void) logEvent:(NSString*) name withObjectsAndKeys:(id) firstObject, ... {
@@ -97,7 +101,7 @@
 }
 
 - (void) logPage:(NSString*) name {
-    
+
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {

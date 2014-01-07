@@ -79,6 +79,14 @@
 	[Flurry setAppVersion:version];
 }
 
+- (void) logPurchase:(NSDictionary *)purchaseData{
+	
+}
+
+- (void) logRegistration:(NSDictionary *)userData{
+	
+}
+
 - (void) setAge:(NSUInteger) age {
     [Flurry setAge:(int) age];
 }

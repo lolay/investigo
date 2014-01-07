@@ -62,6 +62,18 @@
     }    
 }
 
+- (void) logRegistration:(NSDictionary*) userData{
+	for (id<LolayTracker> tracker in self.trackers) {
+        [tracker logRegistration:userData];
+    }
+}
+
+- (void) logPurchase:(NSDictionary*) purchaseData{
+	for (id<LolayTracker> tracker in self.trackers) {
+        [tracker logPurchase:purchaseData];
+    }
+}
+
 - (void) setAge:(NSUInteger) age {
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setAge:age];
