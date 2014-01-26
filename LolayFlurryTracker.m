@@ -35,7 +35,7 @@
 #ifndef __OPTIMIZE__
         [Flurry setShowErrorInLogEnabled:YES];
 #endif        
-        [Flurry setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        [Flurry setAppVersion:[[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"]];
 		[Flurry setCrashReportingEnabled:YES];
         [Flurry startSession:key];
     }
