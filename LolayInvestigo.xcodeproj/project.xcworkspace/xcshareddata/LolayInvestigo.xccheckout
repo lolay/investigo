@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AD008E1C-21E8-4069-A941-13AE0CD887FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LolayInvestigo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3AC7B7DD-894C-47EA-A036-C546D7B2F465</key>
+		<string>ssh://github.com/lolay/investigo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LolayInvestigo/LolayInvestigo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3AC7B7DD-894C-47EA-A036-C546D7B2F465</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/lolay/investigo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3AC7B7DD-894C-47EA-A036-C546D7B2F465</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AC7B7DD-894C-47EA-A036-C546D7B2F465</string>
+			<key>IDESourceControlWCCName</key>
+			<string>investigo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

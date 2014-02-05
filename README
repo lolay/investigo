@@ -1,4 +1,6 @@
-Tracker library for AdMob, others to come soon (Flurry, etc.).
 
-- Async Admob reporting using NSURLConnection delegate methods
-- Once-per-app Admob reporting using Docs dir
+A tracking wrapper to assist with having different trackers per locale, logging to
+multiple trackign libraries and even logging to just NSLog.
+
+Temporarily disabled Bango, Fiksu, Omniture as need to get updated libraries that
+support arm64
