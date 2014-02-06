@@ -37,8 +37,9 @@
     [super tearDown];
 }
 
+/* FIXME: Need to mock loading the Flurry class.
 - (void) testConstruction {
-//[Flurry class];
+//	[Flurry class];
 //	id flurryMock = [OCMockObject mockForClass:[Flurry class]];
 //	[flurryMock stub];
 //	LolayFlurryTracker* tracker1 = [[LolayFlurryTracker alloc] initWithKey:@"TEST"];
@@ -50,7 +51,7 @@
 //	LolayFlurryTracker* tracker3 = [[LolayFlurryTracker alloc] initWithKey:@"TEST" version:@"1" crashReportingEnabled:YES];
 //	XCTAssertNotNil(tracker3, @"Construction with key, version and crashReportingEnabled is nil");
 }
-/*
+
 - (void) testGlobals {
 	LolayFlurryTracker* tracker = [[LolayFlurryTracker alloc] initWithKey:@"TEST" version:@"1" crashReportingEnabled:NO];
 	[tracker setGlobalParameters:@{@"1": @"a"}];

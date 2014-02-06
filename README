@@ -4,3 +4,16 @@ multiple trackign libraries and even logging to just NSLog.
 
 Temporarily disabled Bango, Fiksu, Omniture as need to get updated libraries that
 support arm64
+
+The following libraries should be added:
+ * Foundation.framework
+ * CoreData.framework
+ * Security.framework
+ * SystemConfiguration.framework
+ * CoreTelephony.framework
+ * UIKit.framework
+ * QuartzCore.framework
+ * AdSupport.framework
+ * libsqlite3.dylib
+ * libz.dylib
+ * sysctl

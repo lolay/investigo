@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
     s.name              = 'LolayInvestigo'
-    s.version           = '0.5.0'
-    s.summary           = 'Tracking Library for Flurry, Omniture, etc.'
+    s.version           = '1'
+    s.summary           = 'Tracking Library for Flurry, Omniture, Segment.IO, etc.'
     s.homepage          = 'https://github.com/Lolay/Investigo'
     s.license           = {
         :type => 'Apache',
@@ -13,11 +13,11 @@ Pod::Spec.new do |s|
     }
     s.source            = {
         :git => 'https://github.com/lolay/investigo.git',
-        :tag => "0.5.0"
+        :tag => "1"
     }
-    s.source_files      = 'LolayInvestigo/*.*','LolayInvestigoTests/*.*'
-	s.dependency 'OCMock', '~> 2.2'
+    s.source_files      = 'LolayInvestigo/*.*'
     s.requires_arc      = true
-	s.frameworks = 'XCTest','UIKit','Foundation'
+	s.frameworks = 'XCTest','UIKit','Foundation','CoreData','Security','SystemConfiguration','CoreTelephony','UIKit','QuartzCore','AdSupport'
+	s.library = 'z','sqllite3'
 	s.ios.deployment_target = '7.0'
 end

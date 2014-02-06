@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E68A22418A31BA300EB8857 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22318A31BA300EB8857 /* CoreData.framework */; };
+		4E68A22618A31BAA00EB8857 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22518A31BAA00EB8857 /* Security.framework */; };
+		4E68A22818A31BB200EB8857 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22718A31BB200EB8857 /* SystemConfiguration.framework */; };
+		4E68A22A18A31BBB00EB8857 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22918A31BBB00EB8857 /* CoreTelephony.framework */; };
+		4E68A22C18A31BC300EB8857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22B18A31BC300EB8857 /* UIKit.framework */; };
+		4E68A22E18A31BEF00EB8857 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22D18A31BEF00EB8857 /* QuartzCore.framework */; };
+		4E68A23018A31BF700EB8857 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22F18A31BF700EB8857 /* AdSupport.framework */; };
+		4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23118A31C0200EB8857 /* libsqlite3.dylib */; };
+		4E68A23418A31C0900EB8857 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23318A31C0900EB8857 /* libz.dylib */; };
+		4E68A23618A31EF300EB8857 /* LolayAnalyticsTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */; };
+		4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; };
+		4EDF175718A2FB3C00FC0F6A /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4EDF175A18A2FBD400FC0F6A /* LolayAnalyticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */; };
 		4EFB52DD18A2B26600B6096A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52DC18A2B26600B6096A /* Foundation.framework */; };
 		4EFB52EB18A2B26600B6096A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52EA18A2B26600B6096A /* XCTest.framework */; };
 		4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52DC18A2B26600B6096A /* Foundation.framework */; };
@@ -47,6 +60,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E68A22318A31BA300EB8857 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4E68A22518A31BAA00EB8857 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4E68A22718A31BB200EB8857 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4E68A22918A31BBB00EB8857 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4E68A22B18A31BC300EB8857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4E68A22D18A31BEF00EB8857 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4E68A22F18A31BF700EB8857 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4E68A23118A31C0200EB8857 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4E68A23318A31C0900EB8857 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayAnalyticsTrackerTests.m; sourceTree = "<group>"; };
+		4EDF175618A2FB3C00FC0F6A /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
+		4EDF175818A2FBD400FC0F6A /* LolayAnalyticsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LolayAnalyticsTracker.h; sourceTree = "<group>"; };
+		4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayAnalyticsTracker.m; sourceTree = "<group>"; };
 		4EFB52D918A2B26600B6096A /* libLolayInvestigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLolayInvestigo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFB52DC18A2B26600B6096A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4EFB52E018A2B26600B6096A /* LolayInvestigo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LolayInvestigo-Prefix.pch"; sourceTree = "<group>"; };
@@ -99,8 +125,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E68A23418A31C0900EB8857 /* libz.dylib in Frameworks */,
+				4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */,
+				4E68A23018A31BF700EB8857 /* AdSupport.framework in Frameworks */,
+				4E68A22E18A31BEF00EB8857 /* QuartzCore.framework in Frameworks */,
+				4E68A22C18A31BC300EB8857 /* UIKit.framework in Frameworks */,
+				4E68A22A18A31BBB00EB8857 /* CoreTelephony.framework in Frameworks */,
+				4E68A22818A31BB200EB8857 /* SystemConfiguration.framework in Frameworks */,
+				4E68A22618A31BAA00EB8857 /* Security.framework in Frameworks */,
+				4E68A22418A31BA300EB8857 /* CoreData.framework in Frameworks */,
 				4EFB52DD18A2B26600B6096A /* Foundation.framework in Frameworks */,
 				4EFB532918A2B77300B6096A /* libFlurry.a in Frameworks */,
+				4EDF175718A2FB3C00FC0F6A /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +149,7 @@
 				4EFB52F118A2B26600B6096A /* libLolayInvestigo.a in Frameworks */,
 				4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */,
 				4EFB533518A2BEAE00B6096A /* libOCMock.a in Frameworks */,
+				4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +183,16 @@
 		4EFB52DB18A2B26600B6096A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E68A23318A31C0900EB8857 /* libz.dylib */,
+				4E68A23118A31C0200EB8857 /* libsqlite3.dylib */,
+				4E68A22F18A31BF700EB8857 /* AdSupport.framework */,
+				4E68A22D18A31BEF00EB8857 /* QuartzCore.framework */,
+				4E68A22B18A31BC300EB8857 /* UIKit.framework */,
+				4E68A22918A31BBB00EB8857 /* CoreTelephony.framework */,
+				4E68A22718A31BB200EB8857 /* SystemConfiguration.framework */,
+				4E68A22518A31BAA00EB8857 /* Security.framework */,
+				4E68A22318A31BA300EB8857 /* CoreData.framework */,
+				4EDF175618A2FB3C00FC0F6A /* Analytics.framework */,
 				4EFB52DC18A2B26600B6096A /* Foundation.framework */,
 				4EFB52EA18A2B26600B6096A /* XCTest.framework */,
 				4EFB52ED18A2B26600B6096A /* UIKit.framework */,
@@ -179,6 +226,8 @@
 				4EFB531618A2B2BF00B6096A /* LolayOmnitureTrackerDelegate.h */,
 				4EFB531718A2B2BF00B6096A /* LolayTracker.h */,
 				4EFB531818A2B2BF00B6096A /* LolayTrackerGender.h */,
+				4EDF175818A2FBD400FC0F6A /* LolayAnalyticsTracker.h */,
+				4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */,
 				4EFB52DF18A2B26600B6096A /* Supporting Files */,
 			);
 			path = LolayInvestigo;
@@ -196,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				4EFB532A18A2B98A00B6096A /* LolayFlurryTrackerTests.m */,
+				4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */,
 				4EFB52F318A2B26600B6096A /* Supporting Files */,
 			);
 			path = LolayInvestigoTests;
@@ -328,6 +378,7 @@
 				4EFB532018A2B2BF00B6096A /* LolayNoTracker.m in Sources */,
 				4EFB531F18A2B2BF00B6096A /* LolayMultipleTracker.m in Sources */,
 				4EFB531D18A2B2BF00B6096A /* LolayFlurryTracker.m in Sources */,
+				4EDF175A18A2FBD400FC0F6A /* LolayAnalyticsTracker.m in Sources */,
 				4EFB531E18A2B2BF00B6096A /* LolayLocaleTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFB532B18A2B98A00B6096A /* LolayFlurryTrackerTests.m in Sources */,
+				4E68A23618A31EF300EB8857 /* LolayAnalyticsTrackerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +486,11 @@
 		4EFB52FD18A2B26600B6096A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/gary/Downloads/Analytics-latest-stable",
+					/Users/gary/Projects/lolay/investigo,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
@@ -449,6 +506,11 @@
 		4EFB52FE18A2B26600B6096A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/gary/Downloads/Analytics-latest-stable",
+					/Users/gary/Projects/lolay/investigo,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
@@ -468,6 +530,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/gary/Projects/lolay/investigo,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
@@ -493,6 +556,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/gary/Projects/lolay/investigo,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";

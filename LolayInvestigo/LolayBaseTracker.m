@@ -139,4 +139,8 @@
 	return nil;
 }
 
+- (void) registerDeviceToken:(NSData*) deviceToken {
+
+}
+
 @end
