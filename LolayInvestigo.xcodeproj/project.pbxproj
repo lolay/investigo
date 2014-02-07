@@ -487,15 +487,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					.,
 					"$(inherited)",
-					"/Users/gary/Downloads/Analytics-latest-stable",
-					/Users/gary/Projects/lolay/investigo,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gary/Projects/lolay/investigo/Flurry,
+					Flurry,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,15 +506,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					.,
 					"$(inherited)",
-					"/Users/gary/Downloads/Analytics-latest-stable",
-					/Users/gary/Projects/lolay/investigo,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gary/Projects/lolay/investigo/Flurry,
+					Flurry,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,7 +540,7 @@
 				INFOPLIST_FILE = "LolayInvestigoTests/LolayInvestigoTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gary/Projects/lolay/investigo/OCMock,
+					OCMock,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -568,7 +566,7 @@
 				INFOPLIST_FILE = "LolayInvestigoTests/LolayInvestigoTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gary/Projects/lolay/investigo/OCMock,
+					OCMock,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
