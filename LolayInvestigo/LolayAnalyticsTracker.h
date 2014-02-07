@@ -19,5 +19,6 @@
 @interface LolayAnalyticsTracker : LolayBaseTracker
 
 - (id) initWithSecret:(NSString*) secret;
+- (id) initWithSecret:(NSString*) secret debug:(BOOL) debug;
 
 @end
