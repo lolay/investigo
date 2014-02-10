@@ -29,28 +29,13 @@
 
 @synthesize globalParametersValue = globalParametersValue_;
 
-- (id) initWithKey:(NSString*) key {
+- (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled debug:(BOOL) debug {
     self = [super init];
     if (self) {
-#ifndef __OPTIMIZE__
-        [Flurry setShowErrorInLogEnabled:YES];
-#endif        
-        [Flurry setAppVersion:[[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"]];
-		[Flurry setCrashReportingEnabled:YES];
-        [Flurry startSession:key];
-    }
-    
-    return self;
-}
-
-- (id) initWithKey:(NSString*) key version:(NSString*) version {
-    self = [super init];
-    if (self) {
-#ifndef __OPTIMIZE__
-        [Flurry setShowErrorInLogEnabled:YES];
-#endif        
+        [Flurry setShowErrorInLogEnabled:debug];
+		[Flurry setDebugLogEnabled:debug];
         [Flurry setAppVersion:version];
-		[Flurry setCrashReportingEnabled:YES];
+		[Flurry setCrashReportingEnabled:crashReportingEnabled];
         [Flurry startSession:key];
     }
     
@@ -58,16 +43,18 @@
 }
 
 - (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled {
-    self = [super init];
-    if (self) {
-#ifndef __OPTIMIZE__
-        [Flurry setShowErrorInLogEnabled:YES];
-#endif
-        [Flurry setAppVersion:version];
-		[Flurry setCrashReportingEnabled:crashReportingEnabled];
-        [Flurry startSession:key];
-    }
-    
+    self = [self initWithKey:key version:version crashReportingEnabled:crashReportingEnabled debug:NO];
+    return self;
+}
+
+- (id) initWithKey:(NSString*) key version:(NSString*) version {
+    self = [self initWithKey:key version:version crashReportingEnabled:YES debug:NO];
+    return self;
+}
+
+- (id) initWithKey:(NSString*) key {
+	NSString* version = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"];
+    self = [self initWithKey:key version:version crashReportingEnabled:YES debug:NO];
     return self;
 }
 
@@ -176,6 +163,15 @@
 
 - (void) logError:(NSError*) error {
     [Flurry logError:[NSString stringWithFormat:@"%@:%li", error.domain, (long) error.code] message:error.localizedDescription error:error];
+}
+
+- (void) registerDeviceToken:(NSData*) deviceToken {
+	NSString* token = [deviceToken description];
+	token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+	token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+	token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+	token = [token uppercaseString];
+	[Flurry setPushToken:token];
 }
 
 @end

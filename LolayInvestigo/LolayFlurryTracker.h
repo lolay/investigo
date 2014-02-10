@@ -22,5 +22,6 @@
 - (id) initWithKey:(NSString*) key;
 - (id) initWithKey:(NSString*) key version:(NSString*) version;
 - (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled;
+- (id) initWithKey:(NSString*) key version:(NSString*) version crashReportingEnabled:(BOOL) crashReportingEnabled debug:(BOOL) debug;
 
 @end
