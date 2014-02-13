@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
         :git => 'https://github.com/lolay/investigo.git',
         :tag => "1"
     }
-    s.source_files      = 'LolayInvestigo/LolayAnalyticsTracker.*','LolayInvestigo/LolayBaseTracker.*','LolayInvestigo/LolayFlurryTracker.*','LolayInvestigo/LolayLocaleTracker.*','LolayInvestigo/LolayMultipleTracker.*','LolayInvestigo/LolayNSLogTracker.*','LolayInvestigo/LolayNoTracker.*','LolayInvestigo/LolayTracker.*','LolayInvestigo/LolayTrackerGender.*','LolayInvestigoGlobals.h'
+    s.source_files      = 'LolayInvestigo/LolayAnalyticsTracker.*','LolayInvestigo/LolayBaseTracker.*','LolayInvestigo/LolayFlurryTracker.*','LolayInvestigo/LolayLocaleTracker.*','LolayInvestigo/LolayMultipleTracker.*','LolayInvestigo/LolayNSLogTracker.*','LolayInvestigo/LolayNoTracker.*','LolayInvestigo/LolayTracker.*','LolayInvestigo/LolayTrackerGender.*','LolayInvestigoGlobals.*'
     s.requires_arc      = true
 	s.frameworks = 'XCTest','UIKit','Foundation','CoreData','Security','SystemConfiguration','CoreTelephony','UIKit','QuartzCore','AdSupport'
 	s.library = 'z','sqllite3'
