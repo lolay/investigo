@@ -17,9 +17,17 @@
 		4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23118A31C0200EB8857 /* libsqlite3.dylib */; };
 		4E68A23418A31C0900EB8857 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23318A31C0900EB8857 /* libz.dylib */; };
 		4E68A23618A31EF300EB8857 /* LolayAnalyticsTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */; };
-		4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; };
+		4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4EDF175718A2FB3C00FC0F6A /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4EDF175A18A2FBD400FC0F6A /* LolayAnalyticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */; };
+		4EE0EB2618AD4F1E000E9554 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22318A31BA300EB8857 /* CoreData.framework */; };
+		4EE0EB2718AD4F2C000E9554 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22518A31BAA00EB8857 /* Security.framework */; };
+		4EE0EB2818AD4F58000E9554 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22918A31BBB00EB8857 /* CoreTelephony.framework */; };
+		4EE0EB2918AD4F69000E9554 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22718A31BB200EB8857 /* SystemConfiguration.framework */; };
+		4EE0EB2A18AD4F81000E9554 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22D18A31BEF00EB8857 /* QuartzCore.framework */; };
+		4EE0EB2B18AD4F8C000E9554 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22F18A31BF700EB8857 /* AdSupport.framework */; };
+		4EE0EB2C18AD4F9D000E9554 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23118A31C0200EB8857 /* libsqlite3.dylib */; };
+		4EE0EB2D18AD4FA6000E9554 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23318A31C0900EB8857 /* libz.dylib */; };
 		4EFB52DD18A2B26600B6096A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52DC18A2B26600B6096A /* Foundation.framework */; };
 		4EFB52EB18A2B26600B6096A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52EA18A2B26600B6096A /* XCTest.framework */; };
 		4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB52DC18A2B26600B6096A /* Foundation.framework */; };
@@ -143,10 +151,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFB52EB18A2B26600B6096A /* XCTest.framework in Frameworks */,
-				4EFB52EE18A2B26600B6096A /* UIKit.framework in Frameworks */,
-				4EFB52F118A2B26600B6096A /* libLolayInvestigo.a in Frameworks */,
-				4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */,
 				4EFB533518A2BEAE00B6096A /* libOCMock.a in Frameworks */,
+				4EFB52F118A2B26600B6096A /* libLolayInvestigo.a in Frameworks */,
+				4EE0EB2D18AD4FA6000E9554 /* libz.dylib in Frameworks */,
+				4EE0EB2C18AD4F9D000E9554 /* libsqlite3.dylib in Frameworks */,
+				4EE0EB2B18AD4F8C000E9554 /* AdSupport.framework in Frameworks */,
+				4EE0EB2A18AD4F81000E9554 /* QuartzCore.framework in Frameworks */,
+				4EFB52EE18A2B26600B6096A /* UIKit.framework in Frameworks */,
+				4EE0EB2818AD4F58000E9554 /* CoreTelephony.framework in Frameworks */,
+				4EE0EB2918AD4F69000E9554 /* SystemConfiguration.framework in Frameworks */,
+				4EE0EB2718AD4F2C000E9554 /* Security.framework in Frameworks */,
+				4EE0EB2618AD4F1E000E9554 /* CoreData.framework in Frameworks */,
+				4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */,
 				4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
