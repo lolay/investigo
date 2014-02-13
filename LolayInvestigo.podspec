@@ -20,4 +20,5 @@ Pod::Spec.new do |s|
 	s.frameworks = 'XCTest','UIKit','Foundation','CoreData','Security','SystemConfiguration','CoreTelephony','UIKit','QuartzCore','AdSupport'
 	s.library = 'z','sqllite3'
 	s.ios.deployment_target = '7.0'
+	s.xcconfig        = { 'OTHER_LDFLAGS' => '-ObjC', 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
 end
