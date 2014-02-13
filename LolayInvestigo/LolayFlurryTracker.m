@@ -1,5 +1,5 @@
 //
-//  Copyright 2012 Lolay, Inc.
+//  Copyright 2012-2014 Lolay, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 #import "Flurry.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
+#import "LolayInvestigoGlobals.h"
 
 @interface LolayFlurryTracker ()
 
