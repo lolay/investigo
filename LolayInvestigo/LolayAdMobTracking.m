@@ -14,7 +14,6 @@
 //  limitations under the License.
 //
 
-#import "LolayInvestigoGlobals.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "LolayAdMobTracking.h"
 
