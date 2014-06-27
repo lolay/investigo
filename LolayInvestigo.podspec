@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
     }
     s.source_files      = 'LolayInvestigo/LolayAnalyticsTracker.*','LolayInvestigo/LolayBaseTracker.*','LolayInvestigo/LolayFlurryTracker.*','LolayInvestigo/LolayLocaleTracker.*','LolayInvestigo/LolayMultipleTracker.*','LolayInvestigo/LolayNSLogTracker.*','LolayInvestigo/LolayNoTracker.*','LolayInvestigo/LolayTracker.*','LolayInvestigo/LolayTrackerGender.*','LolayInvestigo/LolayInvestigoGlobals.*'
     s.requires_arc      = true
-	s.frameworks = 'XCTest','UIKit','Foundation','CoreData','Security','SystemConfiguration','CoreTelephony','UIKit','QuartzCore','AdSupport'
+	s.frameworks = 'CoreData','Security','SystemConfiguration','CoreTelephony','QuartzCore','AdSupport'
 	s.library = 'z','sqlite3'
 	s.ios.deployment_target = '7.0'
-	s.xcconfig        = { 'OTHER_LDFLAGS' => '-ObjC', 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
+	s.xcconfig        = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
 end
