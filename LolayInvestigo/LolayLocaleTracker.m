@@ -77,6 +77,34 @@
     [[self trackerForCurrentLocale] setAge:age];
 }
 
+- (void) setFirstName:(NSString *)firstName {
+    [[self trackerForCurrentLocale] setFirstName:firstName];
+}
+
+- (void) setLastName:(NSString *)lastName {
+    [[self trackerForCurrentLocale] setLastName:lastName];
+}
+
+- (void) setEmail:(NSString *)email {
+    [[self trackerForCurrentLocale] setEmail:email];
+}
+
+- (void) setCity:(NSString *)city {
+    [[self trackerForCurrentLocale] setCity:city];
+}
+
+- (void) setState:(NSString *)state {
+    [[self trackerForCurrentLocale] setState:state];
+}
+- (void) setZip:(NSString *)zip {
+    [[self trackerForCurrentLocale] setZip:zip];
+}
+
+- (void) setPhone:(NSString *)phone {
+    [[self trackerForCurrentLocale] setPhone:phone];
+}
+
+
 - (void) setGender:(LolayTrackerGender) gender {
     [[self trackerForCurrentLocale] setGender:gender];
 }

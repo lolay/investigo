@@ -80,6 +80,48 @@
     }    
 }
 
+- (void) setFirstName:(NSString *)firstName {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setFirstName:firstName];
+    }
+}
+
+- (void) setLastName:(NSString *)lastName {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setLastName:lastName];
+    }
+}
+
+- (void) setEmail:(NSString *)email {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setEmail:email];
+    }
+}
+
+- (void) setCity:(NSString *)city {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setCity:city];
+    }
+}
+
+- (void) setState:(NSString *)state {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setState:state];
+    }
+}
+
+- (void) setZip:(NSString *)zip {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setZip:zip];
+    }
+}
+
+- (void) setPhone:(NSString *)phone {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker setPhone:phone];
+    }
+}
+
 - (void) setGender:(LolayTrackerGender) gender {
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGender:gender];

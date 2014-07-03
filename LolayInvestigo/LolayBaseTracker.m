@@ -24,13 +24,22 @@
 
 - (void) setVersion:(NSString*) version {
 	
-}
-
-- (void) setAge:(NSUInteger) age {
     
 }
 
-- (void) setGender:(LolayTrackerGender) gender {
+- (void) setFirstName:(NSString*) firstName {
+    
+}
+
+- (void) setLastName:(NSString*) lastName {
+    
+}
+
+- (void) setEmail:(NSString *) email {
+    
+}
+
+- (void) setCity:(NSString *) city {
     
 }
 
@@ -38,7 +47,19 @@
     
 }
 
-- (void) setZip:(NSString*) zip {
+- (void) setZip:(NSString *)zip {
+    
+}
+
+- (void) setPhone:(NSString *)phone {
+    
+}
+
+- (void) setAge:(NSUInteger) age {
+    
+}
+
+- (void) setGender:(LolayTrackerGender) gender {
     
 }
 

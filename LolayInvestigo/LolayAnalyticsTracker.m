@@ -54,6 +54,36 @@
 	[self.analytics identify:self.identifer traits:@{@"age": ageString}];
 }
 
+- (void) setFirstName:(NSString*) firstName {
+	[self.analytics identify:self.identifer traits:@{@"firstName": firstName}];
+}
+
+
+- (void) setLastName:(NSString*) lastName {
+	[self.analytics identify:self.identifer traits:@{@"lastName": lastName}];
+}
+
+- (void) setEmail:(NSString *) email {
+	[self.analytics identify:self.identifer traits:@{@"email": email}];
+}
+
+- (void) setCity:(NSString *) city {
+    [self.analytics identify:self.identifer traits:@{@"city": city}];
+}
+
+- (void) setState:(NSString*) state {
+    [self.analytics identify:self.identifer traits:@{@"state": state}];
+}
+
+- (void) setZip:(NSString *)zip {
+    [self.analytics identify:self.identifer traits:@{@"zip": zip}];
+}
+
+- (void) setPhone:(NSString *)phone {
+    [self.analytics identify:self.identifer traits:@{@"phone": phone}];
+}
+
+
 - (void) setGender:(LolayTrackerGender) gender {
 	NSString* genderString = nil;
     if (gender == LolayTrackerGenderMale) {

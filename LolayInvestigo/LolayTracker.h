@@ -21,6 +21,13 @@
 
 - (void) setIdentifier:(NSString*) identifier;
 - (void) setVersion:(NSString*) version;
+- (void) setFirstName: (NSString *) firstName;
+- (void) setLastName: (NSString *) lastName;
+- (void) setEmail: (NSString *) email;
+- (void) setCity: (NSString *) city;
+- (void) setState: (NSString *) state;
+- (void) setZip: (NSString *) zip;
+- (void) setPhone: (NSString *) phone;
 - (void) setAge:(NSUInteger) age;
 - (void) setGender:(LolayTrackerGender) gender;
 - (void) setState:(NSString*) state;
