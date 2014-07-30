@@ -29,11 +29,26 @@
 }
 
 - (void) logEvent:(NSString*) name {
-    [NewRelicAgent recordMetricWithName:name category:@"Event"];
+    [NewRelicAgent recordMetricWithName:[self convertMetricName:name] category:@"Event"];
 }
 
 - (void) logPage:(NSString*) name {
-    [NewRelicAgent recordMetricWithName:name category:@"Page"];
+    [NewRelicAgent recordMetricWithName:[self convertMetricName:name] category:@"Page"];
+}
+
+#pragma mark - Private methods
+
+- (NSString*) convertMetricName:(NSString*) name {
+    
+    NSString* convertedName = name;
+    
+    NSError* error = nil;
+    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"[^a-zA-Z0-9_]+" options:nil error:&error];
+    if (error == nil) {
+        convertedName = [regex stringByReplacingMatchesInString:name options:nil range:NSMakeRange(0, name.length) withTemplate:@""];
+    }
+    
+    return convertedName;
 }
 
 @end
