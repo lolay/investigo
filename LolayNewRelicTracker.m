@@ -36,6 +36,10 @@
     [NewRelicAgent recordMetricWithName:[self convertMetricName:name] category:@"Page"];
 }
 
+- (void) logError:(NSError*) error {
+    [NewRelicAgent recordMetricWithName:[self convertMetricName:[NSString stringWithFormat:@"%@_%d", [error.domain stringByReplacingOccurrencesOfString:@"." withString:@"_"], (int) error.code]] category:@"Error"];
+}
+
 #pragma mark - Private methods
 
 - (NSString*) convertMetricName:(NSString*) name {
