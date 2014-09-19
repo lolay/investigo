@@ -112,6 +112,12 @@
 	[self.globalParametersValue setObject:object forKey:key];
 }
 
+- (void) removeGlobalParameterForKey:(NSString *)key {
+	if (self.globalParametersValue != nil) {
+		[self.globalParametersValue removeObjectForKey:key];
+	}
+}
+
 - (NSString*) machine {
 	size_t size;
 	int mib[2] = {CTL_HW, HW_MACHINE};
