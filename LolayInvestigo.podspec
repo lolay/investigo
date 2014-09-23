@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
 	s.library = 'z','sqlite3'
 	s.ios.deployment_target = '7.0'
 	s.xcconfig        = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
-    s.dependency 'Analytics', '~> 1.7.7'
+    s.dependency 'Analytics/Segmentio', '~> 1.7.7'
 end
