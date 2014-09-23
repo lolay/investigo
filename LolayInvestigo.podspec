@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name              = 'LolayInvestigo'
-    s.version           = '1'
+    s.version           = '2'
     s.summary           = 'Tracking Library for Flurry, Omniture, Segment.IO, etc.'
     s.homepage          = 'https://github.com/Lolay/Investigo'
     s.license           = {
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     }
     s.source            = {
         :git => 'https://github.com/lolay/investigo.git',
-        :tag => "1"
+        :tag => s.version.to_s
     }
     s.source_files      = 'LolayInvestigo/LolayAnalyticsTracker.*','LolayInvestigo/LolayBaseTracker.*','LolayInvestigo/LolayFlurryTracker.*','LolayInvestigo/LolayLocaleTracker.*','LolayInvestigo/LolayMultipleTracker.*','LolayInvestigo/LolayNSLogTracker.*','LolayInvestigo/LolayNoTracker.*','LolayInvestigo/LolayTracker.*','LolayInvestigo/LolayTrackerGender.*','LolayInvestigo/LolayInvestigoGlobals.*'
     s.requires_arc      = true
@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
 	s.library = 'z','sqlite3'
 	s.ios.deployment_target = '7.0'
 	s.xcconfig        = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
+    s.dependency 'Analytics', '~> 1.7.7'
 end

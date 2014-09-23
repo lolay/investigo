@@ -149,6 +149,10 @@
     
 }
 
+- (void) logIdentity {
+    
+}
+
 - (NSString*) trackerId {
 	return nil;
 }

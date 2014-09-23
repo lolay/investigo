@@ -26,14 +26,23 @@
 
 
 + (id)eventWithName:(NSString *)name oneTimeOnly:(BOOL)oneTimeOnly;
+
 + (id)eventWithTransactionId:(NSString *)transactionId
 	productId:(NSString *)productId
 	quantity:(int)quantity;
+
 + (id)eventWithTransactionId:(NSString *)transactionId
 	productId:(NSString *)productId
 	quantity:(int)quantity
 	priceInCents:(int)priceInCents
 	currency:(NSString *)currencyCode;
+
++ (id)eventWithTransactionId:(NSString *)transactionId
+	productId:(NSString *)productId
+	quantity:(int)quantity
+	priceInCents:(int)priceInCents
+	currency:(NSString *)currencyCode
+	base64Receipt:(NSString *)base64Receipt;
 
 - (void)addValue:(NSObject *)obj forKey:(NSString *)key;
 
@@ -41,7 +50,7 @@
 - (void)addIntegerValue:(int)value forKey:(NSString *)key				__attribute__((deprecated));
 - (void)addUnsignedIntegerValue:(uint)value forKey:(NSString *)key 		__attribute__((deprecated));
 - (void)addDoubleValue:(double)value forKey:(NSString *)key 			__attribute__((deprecated));
-- (void)addFloatValue:(double)value forKey:(NSString *)key 				__attribute__((deprecated));
+- (void)addFloatValue:(float)value forKey:(NSString *)key 				__attribute__((deprecated));
 - (void)addBooleanValue:(BOOL)value forKey:(NSString *)key 				__attribute__((deprecated));
 
 

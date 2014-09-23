@@ -10,29 +10,29 @@
 	<string>LolayInvestigo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3AC7B7DD-894C-47EA-A036-C546D7B2F465</key>
+		<key>3996BDC7324373C6DFEE9F7148F968A5F0536373</key>
 		<string>ssh://github.com/lolay/investigo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LolayInvestigo/LolayInvestigo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3AC7B7DD-894C-47EA-A036-C546D7B2F465</key>
+		<key>3996BDC7324373C6DFEE9F7148F968A5F0536373</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/lolay/investigo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3AC7B7DD-894C-47EA-A036-C546D7B2F465</string>
+	<string>3996BDC7324373C6DFEE9F7148F968A5F0536373</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3AC7B7DD-894C-47EA-A036-C546D7B2F465</string>
+			<string>3996BDC7324373C6DFEE9F7148F968A5F0536373</string>
 			<key>IDESourceControlWCCName</key>
 			<string>investigo</string>
 		</dict>

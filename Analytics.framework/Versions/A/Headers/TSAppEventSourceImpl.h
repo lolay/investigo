@@ -9,7 +9,8 @@
 	id<NSObject> foregroundedEventObserver;
 	TSOpenHandler onOpen;
 	TSTransactionHandler onTransaction;
-    NSMutableDictionary *requestTransactions;
+	NSMutableDictionary *requestTransactions;
+	NSMutableDictionary *transactionReceiptSnapshots;
 }
 
 - (void)setOpenHandler:(TSOpenHandler)handler;

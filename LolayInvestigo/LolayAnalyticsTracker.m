@@ -22,8 +22,17 @@
 
 @interface LolayAnalyticsTracker ()
 
+@property (nonatomic, strong, readwrite) SEGAnalytics* analytics;
 @property (nonatomic, strong, readwrite) NSString* identifer;
-@property (nonatomic, strong, readwrite) Analytics* analytics;
+@property (nonatomic) NSUInteger age;
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *lastName;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) NSString *state;
+@property (strong, nonatomic) NSString *zip;
+@property (strong, nonatomic) NSString *phone;
+@property (nonatomic) LolayTrackerGender gender;
 
 @end
 
@@ -32,9 +41,9 @@
 - (id) initWithSecret:(NSString*) secret debug:(BOOL) debug {
 	self = [super init];
 	if (self) {
-		[Analytics debug:debug];
-		[Analytics initializeWithSecret:secret];
-		self.analytics = [Analytics sharedAnalytics];
+		[SEGAnalytics debug:debug];
+        [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:secret]];
+        self.analytics = [SEGAnalytics sharedAnalytics];
 	}
 	return self;
 }
@@ -45,56 +54,65 @@
 }
 
 - (void) setIdentifier:(NSString*) identifier {
-	self.identifer = identifier;
-	[self.analytics identify:identifier];
+    _identifer = identifier;
+}
+
+- (void) setFirstName: (NSString *) firstName {
+    _firstName = firstName;
+}
+
+- (void) setLastName: (NSString *) lastName {
+    _lastName = lastName;
+}
+
+- (void) setEmail: (NSString *) email {
+    _email = email;
+}
+
+- (void) setCity: (NSString *) city {
+    _city = city;
+}
+
+- (void) setState: (NSString *) state {
+    _state = state;
+}
+
+- (void) setZip: (NSString *) zip {
+    _zip = zip;
+}
+
+- (void) setPhone: (NSString *) phone {
+    _phone = phone;
 }
 
 - (void) setAge:(NSUInteger) age {
-	NSString* ageString = [NSString stringWithFormat:@"%li", (long) age];
-	[self.analytics identify:self.identifer traits:@{@"age": ageString}];
+    _age = age;
 }
-
-- (void) setFirstName:(NSString*) firstName {
-	[self.analytics identify:self.identifer traits:@{@"firstName": firstName}];
-}
-
-
-- (void) setLastName:(NSString*) lastName {
-	[self.analytics identify:self.identifer traits:@{@"lastName": lastName}];
-}
-
-- (void) setEmail:(NSString *) email {
-	[self.analytics identify:self.identifer traits:@{@"email": email}];
-}
-
-- (void) setCity:(NSString *) city {
-    [self.analytics identify:self.identifer traits:@{@"city": city}];
-}
-
-- (void) setState:(NSString*) state {
-    [self.analytics identify:self.identifer traits:@{@"state": state}];
-}
-
-- (void) setZip:(NSString *)zip {
-    [self.analytics identify:self.identifer traits:@{@"zip": zip}];
-}
-
-- (void) setPhone:(NSString *)phone {
-    [self.analytics identify:self.identifer traits:@{@"phone": phone}];
-}
-
 
 - (void) setGender:(LolayTrackerGender) gender {
-	NSString* genderString = nil;
-    if (gender == LolayTrackerGenderMale) {
-		genderString = @"m";
-    } else if (gender == LolayTrackerGenderFemale) {
-		genderString = @"f";
+    _gender = gender;
+}
+
+- (void) logIdentity
+{
+    NSMutableDictionary *traits = [NSMutableDictionary dictionary];
+    if (self.age) traits[@"age"] = [NSString stringWithFormat:@"%ld", (long)self.age];
+    if (self.firstName) traits[@"firstName"] = self.firstName;
+    if (self.lastName) traits[@"lastName"] = self.lastName;
+    if (self.email) traits[@"email"] = self.email;
+    if (self.city) traits[@"city"] = self.city;
+    if (self.state) traits[@"state"] = self.state;
+    if (self.zip) traits[@"zip"] = self.zip;
+    if (self.phone) traits[@"phone"] = self.phone;
+    if (self.gender == LolayTrackerGenderMale) {
+        traits[@"gender"] = @"m";
+    } else if (self.gender == LolayTrackerGenderFemale) {
+        traits[@"gender"] = @"f";
     } else {
-		genderString = @"none";
+        traits[@"gender"] = @"unknown";
     }
-	
-	[self.analytics identify:self.identifer traits:@{@"gender": genderString}];
+    
+    [self.analytics identify:self.identifer traits:traits];
 }
 
 - (NSString*) machine {
@@ -148,7 +166,7 @@
 }
 
 - (void) registerDeviceToken:(NSData*) deviceToken {
-	[self.analytics registerPushDeviceToken:deviceToken];
+    [self.analytics registerForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 @end

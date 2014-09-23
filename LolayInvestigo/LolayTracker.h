@@ -30,8 +30,6 @@
 - (void) setPhone: (NSString *) phone;
 - (void) setAge:(NSUInteger) age;
 - (void) setGender:(LolayTrackerGender) gender;
-- (void) setState:(NSString*) state;
-- (void) setZip:(NSString*) zip;
 - (void) setCampaign:(NSString*) campaign;
 - (void) setChannel:(NSString*) channel;
 - (void) setGlobalParameters:(NSDictionary*) globalParameters;
@@ -47,6 +45,7 @@
 - (void) logError:(NSError*) error;
 - (void) logRegistration:(NSDictionary*) userData;
 - (void) logPurchase:(NSDictionary*) purchaseData;
+- (void) logIdentity;
 - (NSString*) trackerId;
 - (NSString*) trackerIdForType:(Class) clazz;
 - (void) registerDeviceToken:(NSData*) deviceToken;

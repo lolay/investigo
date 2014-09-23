@@ -17,8 +17,6 @@
 		4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23118A31C0200EB8857 /* libsqlite3.dylib */; };
 		4E68A23418A31C0900EB8857 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A23318A31C0900EB8857 /* libz.dylib */; };
 		4E68A23618A31EF300EB8857 /* LolayAnalyticsTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */; };
-		4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4EDF175718A2FB3C00FC0F6A /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF175618A2FB3C00FC0F6A /* Analytics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4EDF175A18A2FBD400FC0F6A /* LolayAnalyticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */; };
 		4EE0EB2618AD4F1E000E9554 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22318A31BA300EB8857 /* CoreData.framework */; };
 		4EE0EB2718AD4F2C000E9554 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E68A22518A31BAA00EB8857 /* Security.framework */; };
@@ -42,6 +40,7 @@
 		4EFB532118A2B2BF00B6096A /* LolayNSLogTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB531318A2B2BF00B6096A /* LolayNSLogTracker.m */; };
 		4EFB532B18A2B98A00B6096A /* LolayFlurryTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB532A18A2B98A00B6096A /* LolayFlurryTrackerTests.m */; };
 		4EFB533518A2BEAE00B6096A /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB532D18A2BEAE00B6096A /* libOCMock.a */; };
+		9B9AD51A19D0F80000342DFD /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AD51919D0F80000342DFD /* Analytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +76,6 @@
 		4E68A23118A31C0200EB8857 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		4E68A23318A31C0900EB8857 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4E68A23518A31EF300EB8857 /* LolayAnalyticsTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayAnalyticsTrackerTests.m; sourceTree = "<group>"; };
-		4EDF175618A2FB3C00FC0F6A /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
 		4EDF175818A2FBD400FC0F6A /* LolayAnalyticsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LolayAnalyticsTracker.h; sourceTree = "<group>"; };
 		4EDF175918A2FBD400FC0F6A /* LolayAnalyticsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayAnalyticsTracker.m; sourceTree = "<group>"; };
 		4EFB52D918A2B26600B6096A /* libLolayInvestigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLolayInvestigo.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +123,7 @@
 		4EFB533318A2BEAE00B6096A /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		4EFB533418A2BEAE00B6096A /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		4EFB533618A2DB5D00B6096A /* LolayInvestigo.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = LolayInvestigo.podspec; sourceTree = "<group>"; };
+		9B9AD51919D0F80000342DFD /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +135,13 @@
 				4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */,
 				4E68A23018A31BF700EB8857 /* AdSupport.framework in Frameworks */,
 				4E68A22E18A31BEF00EB8857 /* QuartzCore.framework in Frameworks */,
+				9B9AD51A19D0F80000342DFD /* Analytics.framework in Frameworks */,
 				4E68A22C18A31BC300EB8857 /* UIKit.framework in Frameworks */,
 				4E68A22A18A31BBB00EB8857 /* CoreTelephony.framework in Frameworks */,
 				4E68A22818A31BB200EB8857 /* SystemConfiguration.framework in Frameworks */,
 				4E68A22618A31BAA00EB8857 /* Security.framework in Frameworks */,
 				4E68A22418A31BA300EB8857 /* CoreData.framework in Frameworks */,
 				4EFB52DD18A2B26600B6096A /* Foundation.framework in Frameworks */,
-				4EDF175718A2FB3C00FC0F6A /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +162,6 @@
 				4EE0EB2718AD4F2C000E9554 /* Security.framework in Frameworks */,
 				4EE0EB2618AD4F1E000E9554 /* CoreData.framework in Frameworks */,
 				4EFB52EC18A2B26600B6096A /* Foundation.framework in Frameworks */,
-				4E68A23718A323C500EB8857 /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +195,7 @@
 		4EFB52DB18A2B26600B6096A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B9AD51919D0F80000342DFD /* Analytics.framework */,
 				4E68A23318A31C0900EB8857 /* libz.dylib */,
 				4E68A23118A31C0200EB8857 /* libsqlite3.dylib */,
 				4E68A22F18A31BF700EB8857 /* AdSupport.framework */,
@@ -206,7 +205,6 @@
 				4E68A22718A31BB200EB8857 /* SystemConfiguration.framework */,
 				4E68A22518A31BAA00EB8857 /* Security.framework */,
 				4E68A22318A31BA300EB8857 /* CoreData.framework */,
-				4EDF175618A2FB3C00FC0F6A /* Analytics.framework */,
 				4EFB52DC18A2B26600B6096A /* Foundation.framework */,
 				4EFB52EA18A2B26600B6096A /* XCTest.framework */,
 				4EFB52ED18A2B26600B6096A /* UIKit.framework */,
@@ -505,6 +503,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					.,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
@@ -519,6 +518,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					.,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LolayInvestigo/LolayInvestigo-Prefix.pch";
