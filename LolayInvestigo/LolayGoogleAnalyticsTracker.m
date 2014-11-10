@@ -13,8 +13,9 @@
 #import <GAIFields.h>
 #import <GAIDictionaryBuilder.h>
 @implementation LolayGoogleAnalyticsTracker
-- (id) initWithLaunchOptions:(NSDictionary*) launchOptions{
+- (id) initWithLaunchOptions:(NSDictionary*) launchOptions withTrackingId:(NSString*)trackingId{
 	if (self = [super init]){
+	 
   // Optional: automatically send uncaught exceptions to Google Analytics.
   [GAI sharedInstance].trackUncaughtExceptions = YES;
 		
@@ -22,10 +23,11 @@
   //[GAI sharedInstance].dispatchInterval = 20;
 		
   // Optional: set Logger to VERBOSE for debug information.
-  //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+  //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
 		
   // Initialize tracker. Replace with your tracking ID.
-  [[GAI sharedInstance] trackerWithTrackingId:@"UA-XXXX-Y"];
+ [[GAI sharedInstance] trackerWithName: @"lolaygoogletracker"
+								trackingId: trackingId];
 
 	}
 	return self;

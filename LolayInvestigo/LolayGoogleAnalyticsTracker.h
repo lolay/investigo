@@ -9,5 +9,5 @@
 #import "LolayBaseTracker.h"
 
 @interface LolayGoogleAnalyticsTracker : LolayBaseTracker
-
+- (id) initWithLaunchOptions:(NSDictionary*) launchOptions withTrackingId:(NSString*)trackingId;
 @end
