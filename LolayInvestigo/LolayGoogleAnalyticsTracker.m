@@ -1,9 +1,17 @@
 //
-//  LolayGoogleAnalyticsTracker.m
-//  11Main
+//  Copyright 2014 Lolay, Inc.
 //
-//  Created by Patrick Ortiz on 11/7/14.
-//  Copyright (c) 2014 Vendio Services, Inc. All rights reserved.
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 #import "LolayGoogleAnalyticsTracker.h"
@@ -13,11 +21,11 @@
 #import <GAIFields.h>
 #import <GAIDictionaryBuilder.h>
 @implementation LolayGoogleAnalyticsTracker
-- (id) initWithLaunchOptions:(NSDictionary*) launchOptions withTrackingId:(NSString*)trackingId{
+- (id) initWithLaunchOptions:(NSDictionary*) launchOptions trackingId:(NSString*) trackingId trackUncaughtExceptions:(BOOL) trackUncaughtExceptions {
 	if (self = [super init]){
 	 
   // Optional: automatically send uncaught exceptions to Google Analytics.
-  [GAI sharedInstance].trackUncaughtExceptions = YES;
+  [GAI sharedInstance].trackUncaughtExceptions = trackUncaughtExceptions;
 		
   // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
   //[GAI sharedInstance].dispatchInterval = 20;
