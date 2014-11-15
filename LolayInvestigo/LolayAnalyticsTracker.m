@@ -166,7 +166,13 @@
 }
 
 - (void) registerDeviceToken:(NSData*) deviceToken {
-    [self.analytics registerForRemoteNotificationsWithDeviceToken:deviceToken];
+    // We pass an options dictionary to explicitly disallow sending the
+    // registerDeviceToken event for Flurry integrations. This is due to a bug
+    // in the Flurry SDK that causes the app to crash.
+    //
+    // See https://github.com/segmentio/analytics-ios/issues/159
+    //
+    [self.analytics registerForRemoteNotificationsWithDeviceToken:deviceToken options:@{ @"integrations": @{ @"Flurry" : @(NO) } }];
 }
 
 @end
