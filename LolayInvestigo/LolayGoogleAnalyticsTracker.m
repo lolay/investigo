@@ -186,6 +186,15 @@
 	
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	double loadTime = [[timingData objectForKey:@"value"] doubleValue];
+	[tracker send:[[GAIDictionaryBuilder createTimingWithCategory:[timingData objectForKey:@"categoyr"]			// Timing category "timing" (required)
+														 interval:@((NSUInteger)(loadTime * 1000))				// Timing interval (required)
+															 name:[timingData objectForKey:@"name"]				// Class Name
+															label:[timingData objectForKey:@"label"]] build]];	// URI for server call
+}
+
 - (NSString*) trackerId {
 	return nil;
 }

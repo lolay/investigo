@@ -42,4 +42,8 @@
     NSLog(@"error=%@", error);
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	NSLog(@"data=%@",timingData);
+}
+
 @end

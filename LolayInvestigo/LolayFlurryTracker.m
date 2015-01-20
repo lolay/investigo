@@ -166,6 +166,10 @@
     [Flurry logError:[NSString stringWithFormat:@"%@:%li", error.domain, (long) error.code] message:error.localizedDescription error:error];
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	
+}
+
 - (void) registerDeviceToken:(NSData*) deviceToken {
 	NSString* token = [deviceToken description];
 	token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];

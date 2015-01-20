@@ -46,6 +46,7 @@
 - (void) logRegistration:(NSDictionary*) userData;
 - (void) logPurchase:(NSDictionary*) purchaseData;
 - (void) logIdentity;
+- (void) logTiming:(NSDictionary*)timingData;
 - (NSString*) trackerId;
 - (NSString*) trackerIdForType:(Class) clazz;
 - (void) registerDeviceToken:(NSData*) deviceToken;

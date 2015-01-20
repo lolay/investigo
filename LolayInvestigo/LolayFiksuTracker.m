@@ -139,6 +139,10 @@
     
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	
+}
+
 - (NSString*) trackerId {
 	return nil;
 }

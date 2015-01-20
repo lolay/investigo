@@ -182,6 +182,12 @@
     }
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	for (id<LolayTracker> tracker in self.trackers) {
+		[tracker logTiming:timingData];
+	}
+}
+
 - (NSString*) trackerIdForType:(Class) clazz {
     for (id<LolayTracker> tracker in self.trackers) {
 		NSString* trackerId = [tracker trackerIdForType:clazz];

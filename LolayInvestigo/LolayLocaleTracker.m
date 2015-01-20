@@ -139,4 +139,8 @@
     [[self trackerForCurrentLocale] logError:error];
 }
 
+- (void) logTiming:(NSDictionary*)timingData{
+	
+}
+
 @end
