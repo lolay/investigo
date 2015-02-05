@@ -33,6 +33,7 @@
 @property (strong, nonatomic) NSString *zip;
 @property (strong, nonatomic) NSString *phone;
 @property (nonatomic) LolayTrackerGender gender;
+@property (strong, nonatomic) NSMutableDictionary *mutableGlobalParameters;
 
 @end
 
@@ -52,6 +53,21 @@
 	self = [self initWithSecret:secret debug:NO];
 	return self;
 }
+
+- (instancetype)initWithSecret:(NSString *)secret trackLocation:(BOOL)trackLocation debug:(BOOL)debug
+{
+    if (self = [super init]) {
+        [SEGAnalytics debug:debug];
+        SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:secret];
+        configuration.shouldUseLocationServices = trackLocation;
+        [SEGAnalytics setupWithConfiguration:configuration];
+        self.analytics = [SEGAnalytics sharedAnalytics];
+    }
+    
+    return self;
+}
+
+#pragma mark - Custom accessors
 
 - (void) setIdentifier:(NSString*) identifier {
     _identifer = identifier;
@@ -93,6 +109,21 @@
     _gender = gender;
 }
 
+- (NSMutableDictionary *)mutableGlobalParameters {
+    if (!_mutableGlobalParameters) _mutableGlobalParameters = [NSMutableDictionary new];
+    return _mutableGlobalParameters;
+}
+
+- (void)setGlobalParameters:(NSDictionary *)globalParameters {
+    self.mutableGlobalParameters = [NSMutableDictionary dictionaryWithDictionary:globalParameters];
+}
+
+#pragma mark - Public methods
+
+- (void)setGlobalParameter:(NSString *)object forKey:(NSString *)key {
+    self.mutableGlobalParameters[key] = object;
+}
+
 - (void) logIdentity
 {
     NSMutableDictionary *traits = [NSMutableDictionary dictionary];
@@ -127,19 +158,19 @@
 }
 
 - (void) logEvent:(NSString*) name {
-	[self.analytics track:name];
+	[self.analytics track:name properties:[self aggregatedParametersWithParameters:nil]];
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
-	[self.analytics track:name properties:parameters];
+	[self.analytics track:name properties:[self aggregatedParametersWithParameters:parameters]];
 }
 
 - (void) logPage:(NSString*) name {
-	[self.analytics screen:name];
+	[self.analytics screen:name properties:[self aggregatedParametersWithParameters:nil]];
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
-	[self.analytics screen:name properties:parameters];
+	[self.analytics screen:name properties:[self aggregatedParametersWithParameters:parameters]];
 }
 
 - (NSString*) valueOrNone:(NSString*) value {
@@ -173,6 +204,19 @@
     // See https://github.com/segmentio/analytics-ios/issues/159
     //
     [self.analytics registerForRemoteNotificationsWithDeviceToken:deviceToken options:@{ @"integrations": @{ @"Flurry" : @(NO) } }];
+}
+
+#pragma mark - Private methods
+
+// Convenience method to provide an aggregation of a dictionary of parameters
+// (i.e. properties) with the global parameters
+- (NSDictionary *)aggregatedParametersWithParameters:(NSDictionary *)parameters {
+    if (self.mutableGlobalParameters.count > 0) {
+        NSMutableDictionary *mutableParameters = [self.mutableGlobalParameters mutableCopy];
+        [mutableParameters addEntriesFromDictionary:parameters];
+        parameters = [mutableParameters copy];
+    }
+    return parameters;
 }
 
 @end

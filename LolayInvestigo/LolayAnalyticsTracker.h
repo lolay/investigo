@@ -21,5 +21,6 @@
 - (id) initWithSecret:(NSString*) secret;
 - (id) initWithSecret:(NSString*) secret debug:(BOOL) debug;
 
+- (instancetype)initWithSecret:(NSString *)secret trackLocation:(BOOL)trackLocation debug:(BOOL)debug;
 
 @end
