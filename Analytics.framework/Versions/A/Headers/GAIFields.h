@@ -16,7 +16,6 @@ extern NSString *const kGAIUseSecure;
 extern NSString *const kGAIHitType;
 extern NSString *const kGAITrackingId;
 extern NSString *const kGAIClientId;
-extern NSString *const kGAIDataSource;
 extern NSString *const kGAIAnonymizeIp;
 extern NSString *const kGAISessionControl;
 extern NSString *const kGAIScreenResolution;

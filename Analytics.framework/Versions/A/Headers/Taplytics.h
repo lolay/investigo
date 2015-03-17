@@ -1,19 +1,13 @@
 //
 //  Taplytics.h
-//  Taplytics v2.1.60
+//  Taplytics
 //
 //  Copyright (c) 2014 Syrp Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "TaplyticsOptions.h"
 
 typedef void(^TLExperimentBlock)(NSDictionary *variables);
-
-typedef void(^TLVariationBlock)(NSString* variationName, NSDictionary *variables);
-
-typedef void(^TLRunningExperimentsAndVariationsBlock)(NSDictionary *experimentsAndVariations);
-
 
 @protocol TaplyticsDelegate <NSObject>
 
@@ -63,8 +57,6 @@ typedef void(^TLRunningExperimentsAndVariationsBlock)(NSDictionary *experimentsA
             - @{@"liveUpdate":@NO} Taplytics will auto-detect an app store build or a development build. But to force production mode use @NO,
                 or @YES to force live update mode for testing.
             - @{@"shakeMenu":@NO} To disable the Taplytics development mode shake menu set @NO, only use if you have your own development shake menu.
-            - @{@"disable":@[TaplyticsOptionTrackLocation]} To disable any tracking attributes set a @"disable" key with an array of values to disable from
-                TaplyticsOptions.h
  */
 + (void)startTaplyticsAPIKey:(NSString*)apiKey options:(NSDictionary*)options;
 
@@ -89,9 +81,9 @@ typedef void(^TLRunningExperimentsAndVariationsBlock)(NSDictionary *experimentsA
 + (void)setTaplyticsDelegate:(id<TaplyticsDelegate>)delegate;
 
 /**
- Run a code experiment defined by experimentName, one baseline or variation block will be run synchronously.
- If the "delayLoad" option is set in the options dictionary of startTaplyticsAPIKey:options: the block execution will be delayed
- and will be called once the Taplytics configuration has been loaded, but before the launch image is hidden.
+ Run code experiment with experiment defined by experimentName, one baseline or variation block will be run synchronously.
+ If the "delayLoad" option is set in the options dictionary of startTaplyticsAPIKey:options: the block will be called asynchronously
+ once the Taplytics configuration has been loaded, but before the launch image is hidden.
  
  If no experiment has been defined or no configuration has been loaded the baseline block will be called. 
  Variation blocks are defined in a NSDictionary with a key of the variation name, and a value of TLExperimentBlock. For Example:
@@ -111,145 +103,16 @@ typedef void(^TLRunningExperimentsAndVariationsBlock)(NSDictionary *experimentsA
 + (void)runCodeExperiment:(NSString*)experimentName withBaseline:(TLExperimentBlock)baselineBlock variations:(NSDictionary*)variationNamesAndBlocks;
 
 /**
- Use this method when running code experiments in Swift, due to how blocks/closures are handled in Swift 
- passing blocks/closures in an NSDictioary is not supported well. This method will return to either the baselineBlock
- or the variationBlock with the variation's name. The blocks are called in the same manner as explained in 
- runCodeExperiment:withBaseline:variations:
- 
- Using this method in Swift:
- Taplytics.runCodeExperiment("testExperiment",
-    forBaseline: { variables in
-        let myVar0: NSNumber? = variables?["var"] as? NSNumber
-        println("Baseline, variable: \(myVar0)")
-    },
-    forVariation: { variationName, variables in
-        let myVar0: NSNumber? = variables?["var"] as? NSNumber
-        if variationName == "variation1" {
-            println("variation 1, variable: \(myVar0)")
-        }
-        else if variationName == "variation2" {
-            println("variation2, variable: \(myVar0)")
-        }
-    }
- )
- 
- @param experimentName Name of the experiment to run
- @param baselineBlock Baseline block called if experiment is in baseline variation
- @param variationBlock Variation block called when the experiment is running a variation
- */
-+ (void)runCodeExperiment:(NSString*)experimentName forBaseline:(TLExperimentBlock)baselineBlock forVariation:(TLVariationBlock)variationBlock;
-
-/**
- Get a NSDictionary of all running experiments and their current variation. This block will return async once the experiment
- configuration has loaded from our servers, or synchronously if the configuration has already loaded. Example of a NSDictionary that is returned:
- 
- NSDictionary* experimentsAndVariations = @{
-    @"Experiment 1": @"baseline",
-    @"Experiment 2": @"Variation 1"
- };
- 
- @param block This block will be called back with a NSDictionary with key value of experiment name and value of it's variation name.
- */
-
-+ (void)getRunningExperimentsAndVariations:(TLRunningExperimentsAndVariationsBlock)block;
-
-/**
- Settings User Attributes allows for submitting mutiple user attributes with custom values. 
- This allows you to set attributes such as a user_id, email, name, age, gender, ect. You can also set a dictionary
- of custom data for the user. The avaliable key-values are shown below:
- 
-    [Taplytics setUserAttributes: @{
-        @"user_id": @"testUser",
-        @"name": @"Test User",
-        @"email": @"test@taplytics.com",
-        @"gender": @"female",
-        @"age": @25,
-        @"avatarUrl": @"https://pbs.twimg.com/profile_images/497895869270618112/1zbNvWlD.png",
-        @"customData": @{
-            @"paidSubscriber": @YES,
-            @"purchases": @3,
-            @"totalRevenue": @42.42
-        }
-    }];
- 
- @param attributes is a dictionary of user attributes that can be used to segment your users against.
- @warning Attributes can only be values allowed by NSJSONSerialization.
-*/
-+ (void)setUserAttributes:(NSDictionary*)attributes;
-
-/**
- Register for push notification access, this method will show the iOS alert asking for access to send push notifications.
- This method will register for Badge, Sound, and Alert notification types
- */
-+ (void)registerPushNotifications;
-
-/**
- Register for push notification access, this method will show the iOS alert asking for access to send push notifications.
- @param types accepts both UIUserNotificationType (iOS 8) or UIRemoteNotificationType
- */
-+ (void)registerPushNotificationsWithTypes:(NSInteger)types;
-
-/**
- @return if the the user is registered with Taplytics and iOS for push notifications.
- */
-+ (BOOL)isUserRegisteredForPushNotifications;
-
-/**
- This method will reset the User to a new empty user, this method is intended to be used when your user logs out of an account. 
- This method will also disable sending push notifications to this device for the previous user. 
- Call registerPushNotifications again to register push notifications for the new user.
- @param callback called when Taplytics has completed resetting your user.
- */
-+ (void)resetUser:(void(^)(void))callback;
-
-/**
- Log an event to Taplytics, these events can be used as goals in your experiments.
- 
- @param eventName the name of the event
-*/
-+ (void)logEvent:(NSString*)eventName;
-
-/** 
- Log an event to Taplytics with an optional number value and optional metadata, these events can be used as goals in your experiments.
- 
- @param eventName the name of the event
- @param value an optional number value to quantify your event
- @param metaData an optional dictionary of metaData to attach to your event. Keep the values of this dictionary flat.
- @warning the metaData can only be values allowed by NSJSONSerialization.
-*/
-+ (void)logEvent:(NSString *)eventName value:(NSNumber*)value metaData:(NSDictionary*)metaData;
-
-/**
- Log revenue to Taplytics with a revenue value, these events can be used as goals in your experiments.
- 
- @param eventName the name of the revenue event
- @param value an optional number value to quantify your event
- */
-+ (void)logRevenue:(NSString*)eventName revenue:(NSNumber*)value;
-
-/**
- Log revenue to Taplytics with a revenue value and optional metadata, these events can be used as goals in your experiments.
- 
- @param eventName the name of the revenue event
- @param value an optional number value to quantify your event
- @param metaData an optional dictionary of metaData to attach to your event. Keep the values of this dictionary flat.
- @warning the metaData can only be values allowed by NSJSONSerialization.
- */
-+ (void)logRevenue:(NSString*)eventName revenue:(NSNumber*)value metaData:(NSDictionary*)metaData;
-
-/**
  Report that an experiment goal has been achieved.
  @param goalName the name of the experiment goal
  */
-+ (void)goalAchieved:(NSString*)goalName __deprecated;
++ (void)goalAchieved:(NSString*)goalName;
 
 /**
  Report that an experiment goal has been achieved, optionally pass number value to track goal such as purchase revenue.
  @param goalName The name of the experiment goal
  @param value A numerical value to be tracked with the goal. For example purcahse revenue.
  */
-+ (void)goalAchieved:(NSString*)goalName value:(NSNumber*)value __deprecated;
-
++ (void)goalAchieved:(NSString*)goalName value:(NSNumber*)value;
 
 @end
-

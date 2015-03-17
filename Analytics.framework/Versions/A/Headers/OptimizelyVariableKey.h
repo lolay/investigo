@@ -38,8 +38,6 @@
  *
  *  NSString *myString = [Optimizely stringForKey:myStringVariable];
  *
- *  @warning Optimizely number variables are limited in size and precision to those of a double.
- *
  */
 @interface OptimizelyVariableKey : NSObject
 /** A unique name for this OptimizelyVariableKey */
@@ -58,7 +56,7 @@
 + (OptimizelyVariableKey *)optimizelyKeyWithKey:(NSString *)key defaultCGSize:(CGSize)defaultValue;
 + (OptimizelyVariableKey *)optimizelyKeyWithKey:(NSString *)key defaultCGRect:(CGRect)defaultValue;
 + (OptimizelyVariableKey *)optimizelyKeyWithKey:(NSString *)key defaultBOOL:(BOOL)defaultValue;
-- (BOOL)isEqualToOptimizelyVariableKey:(OptimizelyVariableKey *)key;
+
 @end
 
 #define _OptimizelyVariableKey(key, type, defVal) OptimizelyVariableKey * key; \
@@ -82,7 +80,6 @@
 /** Defines an OptimizelyKey for variables of type NSNumber
  * @param key The name of this OptimizelyKey.
  * @param defNumber The value that will be returned if no active experiment involves this variable.
- * @warning Optimizely number variables are limited in size and precision to those of a double.
  */
 #define OptimizelyVariableKeyForNumber(key, defNumber) _OptimizelyVariableKey(key, NSNumber, defNumber)
 /** Defines an OptimizelyKey for variables of type CGPoint

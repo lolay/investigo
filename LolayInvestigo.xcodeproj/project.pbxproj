@@ -40,7 +40,7 @@
 		4EFB532118A2B2BF00B6096A /* LolayNSLogTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB531318A2B2BF00B6096A /* LolayNSLogTracker.m */; };
 		4EFB532B18A2B98A00B6096A /* LolayFlurryTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB532A18A2B98A00B6096A /* LolayFlurryTrackerTests.m */; };
 		4EFB533518A2BEAE00B6096A /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB532D18A2BEAE00B6096A /* libOCMock.a */; };
-		9BE67C5C1AB8D6FE00CDEC25 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE67C5B1AB8D6FE00CDEC25 /* Analytics.framework */; };
+		9B9AD51A19D0F80000342DFD /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AD51919D0F80000342DFD /* Analytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +123,7 @@
 		4EFB533318A2BEAE00B6096A /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		4EFB533418A2BEAE00B6096A /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		4EFB533618A2DB5D00B6096A /* LolayInvestigo.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = LolayInvestigo.podspec; sourceTree = "<group>"; };
-		9BE67C5B1AB8D6FE00CDEC25 /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
+		9B9AD51919D0F80000342DFD /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 				4E68A23218A31C0200EB8857 /* libsqlite3.dylib in Frameworks */,
 				4E68A23018A31BF700EB8857 /* AdSupport.framework in Frameworks */,
 				4E68A22E18A31BEF00EB8857 /* QuartzCore.framework in Frameworks */,
-				9BE67C5C1AB8D6FE00CDEC25 /* Analytics.framework in Frameworks */,
+				9B9AD51A19D0F80000342DFD /* Analytics.framework in Frameworks */,
 				4E68A22C18A31BC300EB8857 /* UIKit.framework in Frameworks */,
 				4E68A22A18A31BBB00EB8857 /* CoreTelephony.framework in Frameworks */,
 				4E68A22818A31BB200EB8857 /* SystemConfiguration.framework in Frameworks */,
@@ -195,7 +195,7 @@
 		4EFB52DB18A2B26600B6096A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9BE67C5B1AB8D6FE00CDEC25 /* Analytics.framework */,
+				9B9AD51919D0F80000342DFD /* Analytics.framework */,
 				4E68A23318A31C0900EB8857 /* libz.dylib */,
 				4E68A23118A31C0200EB8857 /* libsqlite3.dylib */,
 				4E68A22F18A31BF700EB8857 /* AdSupport.framework */,

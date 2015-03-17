@@ -205,8 +205,7 @@
  Add a product impression to this hit.
  */
 - (GAIDictionaryBuilder *)addProductImpression:(GAIEcommerceProduct *)product
-                                impressionList:(NSString *)name
-                                impressionSource:(NSString *)source;
+                                impressionList:(NSString *)name;
 
 /*!
  Add a promotion to this hit.
