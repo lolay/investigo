@@ -22,5 +22,4 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '7.0'
 	s.xcconfig        = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Analytics"' }
     s.dependency 'Analytics/Segmentio', '~> 1.7.7'
-    s.dependency 'Analytics/Flurry', '~> 1.7.7'
 end
