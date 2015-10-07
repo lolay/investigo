@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Analytics: c2c324f98edbe2b1bbf8736444d2256161191245
   Flurry-iOS-SDK: 014d366cad101f05d4e8c191c0e0c0871d5704f7
-  LolayInvestigo: 0cd06728ccbbcf3476ac5edafa0a1b502de7f115
+  LolayInvestigo: af56a1fa6c39d6352cc60977ccc2d9350124db1e
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
   TRVSDictionaryWithCaseInsensitivity: 51d2ccf52c6d645d27b63467a98fa02c556e01b0
 

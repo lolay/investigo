@@ -15,7 +15,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "LolayAnalyticsTracker.h"
+#import <LolayInvestigo/LolayInvestigo.h>
 #import <Analytics/Analytics.h>
 
 #define SECRET @"ssshh"

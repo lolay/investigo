@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "LolayInvestigo.h"
 #import "LolayAnalyticsTracker.h"
 #import "LolayBaseTracker.h"
 #import "LolayFlurryTracker.h"
