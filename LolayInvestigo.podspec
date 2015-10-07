@@ -14,7 +14,8 @@ Pod::Spec.new do |s|
     s.license           = { :type => 'Apache', :file => 'LICENSE' }
     s.author            = { 'Lolay' => 'support@lolay.com' }
     s.source            = { :git => 'https://github.com/TheClimateCorporation/investigo.git', :tag => s.version.to_s }
-    s.source_files      = 'LolayInvestigo/LolayAnalyticsTracker.*',
+    s.source_files      = 'LolayInvestigo/LolayInvestigo.h',
+                          'LolayInvestigo/LolayAnalyticsTracker.*',
                           'LolayInvestigo/LolayBaseTracker.*',
                           'LolayInvestigo/LolayFlurryTracker.*',
                           'LolayInvestigo/LolayLocaleTracker.*',
@@ -24,6 +25,18 @@ Pod::Spec.new do |s|
                           'LolayInvestigo/LolayTracker.*',
                           'LolayInvestigo/LolayTrackerGender.*',
                           'LolayInvestigo/LolayInvestigoGlobals.*'
+    s.public_header_files = 'LolayInvestigo/LolayInvestigo.h',
+                        'LolayInvestigo/LolayAnalyticsTracker.h',
+                        'LolayInvestigo/LolayBaseTracker.h',
+                        'LolayInvestigo/LolayFlurryTracker.h',
+                        'LolayInvestigo/LolayLocaleTracker.h',
+                        'LolayInvestigo/LolayMultipleTracker.h',
+                        'LolayInvestigo/LolayNSLogTracker.h',
+                        'LolayInvestigo/LolayNoTracker.h',
+                        'LolayInvestigo/LolayTracker.h',
+                        'LolayInvestigo/LolayTrackerGender.h',
+                        'LolayInvestigo/LolayInvestigoGlobals.h'
+    s.module_name       = 'LolayInvestigo'
     s.requires_arc      = true
     s.frameworks = 'CoreData','Security','SystemConfiguration','CoreTelephony','QuartzCore','AdSupport'
     s.library = 'z','sqlite3'
