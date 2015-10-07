@@ -1,0 +1,28 @@
+PODS:
+  - Analytics/Core-iOS (2.0.13):
+    - TRVSDictionaryWithCaseInsensitivity (= 0.0.2)
+  - Analytics/Segmentio (2.0.13):
+    - Analytics/Core-iOS
+  - Flurry-iOS-SDK/FlurrySDK (7.2.1)
+  - LolayInvestigo (2.1.0):
+    - Analytics/Segmentio (~> 2.0)
+    - Flurry-iOS-SDK/FlurrySDK (~> 7.0)
+  - OCMock (3.2)
+  - TRVSDictionaryWithCaseInsensitivity (0.0.2)
+
+DEPENDENCIES:
+  - LolayInvestigo (from `../`)
+  - OCMock
+
+EXTERNAL SOURCES:
+  LolayInvestigo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Analytics: c2c324f98edbe2b1bbf8736444d2256161191245
+  Flurry-iOS-SDK: 014d366cad101f05d4e8c191c0e0c0871d5704f7
+  LolayInvestigo: 0cd06728ccbbcf3476ac5edafa0a1b502de7f115
+  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
+  TRVSDictionaryWithCaseInsensitivity: 51d2ccf52c6d645d27b63467a98fa02c556e01b0
+
+COCOAPODS: 0.38.2
