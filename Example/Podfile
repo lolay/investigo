@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'LolayInvestigo_Example', :exclusive => true do
+  pod "LolayInvestigo", :path => "../"
+end
+
+target 'LolayInvestigo_Tests', :exclusive => true do
+  pod "LolayInvestigo", :path => "../"
+  pod 'OCMock'
+end

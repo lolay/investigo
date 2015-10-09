@@ -176,7 +176,7 @@
 	token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
 	token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
 	token = [token uppercaseString];
-	[Flurry setPushToken:token];
+//	[Flurry setPushToken:token];
 }
 
 @end
