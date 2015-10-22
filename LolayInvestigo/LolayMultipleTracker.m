@@ -51,26 +51,40 @@
 }
 
 - (void) setIdentifier:(NSString*) identifier {
+    NSParameterAssert(identifier != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setIdentifier:identifier];
     }
 }
 
 - (void) setVersion:(NSString*) version {
+    NSParameterAssert(version != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setVersion:version];
     }    
 }
 
-- (void) logRegistration:(NSDictionary*) userData{
+- (void) logRegistration:(NSDictionary*) userData {
+    NSParameterAssert(userData != nil);
+
 	for (id<LolayTracker> tracker in self.trackers) {
         [tracker logRegistration:userData];
     }
 }
 
-- (void) logPurchase:(NSDictionary*) purchaseData{
+- (void) logPurchase:(NSDictionary*) purchaseData {
+    NSParameterAssert(purchaseData != nil);
+
 	for (id<LolayTracker> tracker in self.trackers) {
         [tracker logPurchase:purchaseData];
+    }
+}
+
+- (void) logIdentity {
+    for (id<LolayTracker> tracker in self.trackers) {
+        [tracker logIdentity];
     }
 }
 
@@ -81,42 +95,56 @@
 }
 
 - (void) setFirstName:(NSString *)firstName {
+    NSParameterAssert(firstName != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setFirstName:firstName];
     }
 }
 
 - (void) setLastName:(NSString *)lastName {
+    NSParameterAssert(lastName != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setLastName:lastName];
     }
 }
 
 - (void) setEmail:(NSString *)email {
+    NSParameterAssert(email != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setEmail:email];
     }
 }
 
 - (void) setCity:(NSString *)city {
+    NSParameterAssert(city != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setCity:city];
     }
 }
 
 - (void) setState:(NSString *)state {
+    NSParameterAssert(state != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setState:state];
     }
 }
 
 - (void) setZip:(NSString *)zip {
+    NSParameterAssert(zip != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setZip:zip];
     }
 }
 
 - (void) setPhone:(NSString *)phone {
+    NSParameterAssert(phone != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setPhone:phone];
     }
@@ -129,66 +157,91 @@
 }
 
 - (void) setGlobalParameters:(NSDictionary*) globalParameters {
+    NSParameterAssert(globalParameters != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGlobalParameters:globalParameters];
     }
 }
 
 - (void) setGlobalParameter:(NSString*) object forKey:(NSString*) key {
+    NSParameterAssert(object != nil);
+    NSParameterAssert(key != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker setGlobalParameter:object forKey:key];
     }
 }
 
 - (void) removeGlobalParameterForKey:(NSString*) key {
+    NSParameterAssert(key != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker removeGlobalParameterForKey:key];
     }
 }
 
 - (void) logEvent:(NSString*) name {
+    NSParameterAssert(name != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logEvent:name];
     }
 }
 
 - (void) logEvent:(NSString*) name withDictionary:(NSDictionary*) parameters {
+    NSParameterAssert(name != nil);
+    NSParameterAssert(parameters != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logEvent:name withDictionary:parameters];
     }
 }
 
 - (void) logPage:(NSString*) name {
+    NSParameterAssert(name != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logPage:name];
     }
 }
 
 - (void) logPage:(NSString*) name withDictionary:(NSDictionary*) parameters {
+    NSParameterAssert(name != nil);
+    NSParameterAssert(parameters != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logPage:name withDictionary:parameters];
     }
 }
 
 - (void) logException:(NSException*) exception {
+    NSParameterAssert(exception != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logException:exception];
     }
 }
 
 - (void) logError:(NSError*) error {
+    NSParameterAssert(error != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
         [tracker logError:error];
     }
 }
 
 - (void) logTiming:(NSDictionary*)timingData{
+    NSParameterAssert(timingData != nil);
+
 	for (id<LolayTracker> tracker in self.trackers) {
 		[tracker logTiming:timingData];
 	}
 }
 
 - (NSString*) trackerIdForType:(Class) clazz {
+    NSParameterAssert(clazz != nil);
+
     for (id<LolayTracker> tracker in self.trackers) {
 		NSString* trackerId = [tracker trackerIdForType:clazz];
 		if (trackerId) {

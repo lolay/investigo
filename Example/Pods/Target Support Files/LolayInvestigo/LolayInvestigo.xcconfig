@@ -1,0 +1,1 @@
+LOLAYINVESTIGO_OTHER_LDFLAGS = -l"sqlite3" -l"z" -framework "AdSupport" -framework "CoreData" -framework "CoreTelephony" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"

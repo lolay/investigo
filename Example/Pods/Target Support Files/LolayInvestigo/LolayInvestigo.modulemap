@@ -1,0 +1,6 @@
+framework module LolayInvestigo {
+  umbrella header "LolayInvestigo-umbrella.h"
+
+  export *
+  module * { export * }
+}

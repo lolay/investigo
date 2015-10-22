@@ -1,0 +1,68 @@
+{
+  "name": "LolayInvestigo",
+  "version": "1.0.1",
+  "summary": "Tracking Library for Flurry, Omniture, Segment.IO, etc.",
+  "homepage": "https://github.com/Lolay/Investigo",
+  "license": {
+    "type": "Apache",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Lolay": "support@lolay.com"
+  },
+  "source": {
+    "git": "https://github.com/TheClimateCorporation/investigo.git",
+    "tag": "1.0.1"
+  },
+  "source_files": [
+    "LolayInvestigo/LolayInvestigo.h",
+    "LolayInvestigo/LolayAnalyticsTracker.*",
+    "LolayInvestigo/LolayBaseTracker.*",
+    "LolayInvestigo/LolayFlurryTracker.*",
+    "LolayInvestigo/LolayLocaleTracker.*",
+    "LolayInvestigo/LolayMultipleTracker.*",
+    "LolayInvestigo/LolayNSLogTracker.*",
+    "LolayInvestigo/LolayNoTracker.*",
+    "LolayInvestigo/LolayTracker.*",
+    "LolayInvestigo/LolayTrackerGender.*",
+    "LolayInvestigo/LolayInvestigoGlobals.*"
+  ],
+  "public_header_files": [
+    "LolayInvestigo/LolayInvestigo.h",
+    "LolayInvestigo/LolayAnalyticsTracker.h",
+    "LolayInvestigo/LolayBaseTracker.h",
+    "LolayInvestigo/LolayFlurryTracker.h",
+    "LolayInvestigo/LolayLocaleTracker.h",
+    "LolayInvestigo/LolayMultipleTracker.h",
+    "LolayInvestigo/LolayNSLogTracker.h",
+    "LolayInvestigo/LolayNoTracker.h",
+    "LolayInvestigo/LolayTracker.h",
+    "LolayInvestigo/LolayTrackerGender.h",
+    "LolayInvestigo/LolayInvestigoGlobals.h"
+  ],
+  "module_name": "LolayInvestigo",
+  "requires_arc": true,
+  "frameworks": [
+    "CoreData",
+    "Security",
+    "SystemConfiguration",
+    "CoreTelephony",
+    "QuartzCore",
+    "AdSupport"
+  ],
+  "libraries": [
+    "z",
+    "sqlite3"
+  ],
+  "platforms": {
+    "ios": "8.0"
+  },
+  "dependencies": {
+    "Analytics/Segmentio": [
+      "~>2.0"
+    ],
+    "Flurry-iOS-SDK/FlurrySDK": [
+      "~>7.0"
+    ]
+  }
+}
