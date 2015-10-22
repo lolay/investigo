@@ -1,4 +1,4 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANALYTICS_VERSION=2.0.13
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANALYTICS_VERSION=2.0.15
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Analytics.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Flurry_iOS_SDK.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/LolayInvestigo.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/OCMock.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/TRVSDictionaryWithCaseInsensitivity.framework/Headers"
 OTHER_LDFLAGS = $(inherited) -ObjC -framework "Analytics" -framework "Flurry_iOS_SDK" -framework "LolayInvestigo" -framework "OCMock" -framework "TRVSDictionaryWithCaseInsensitivity"

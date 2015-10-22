@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14E36BB26DECB1DCFCED3D04"
+               BlueprintIdentifier = "57A26F9408211AD734BA93C3"
                BuildableName = "LolayInvestigo.framework"
                BlueprintName = "LolayInvestigo"
                ReferencedContainer = "container:Pods.xcodeproj">
